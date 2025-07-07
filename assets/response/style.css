@@ -113,13 +113,23 @@ body {
     background-color: #f7f9fc; 
     padding: 1em 1em;
   }
+  .bg-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.6; /* Optional dark overlay */
+  z-index: 1;
+  }
+
   #hero {
     background-color: #f7f9fc;
     position: relative;
     height: 80vh;
     background: 
-    linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), /* Optional overlay */
-    url('assets/images/Background.jpg') no-repeat center center / cover; 
+     
     color: #00ff00;
     display: flex;
     align-items: center;
