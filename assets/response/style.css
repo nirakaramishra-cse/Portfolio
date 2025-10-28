@@ -439,17 +439,18 @@ body {
   }
   .tskill {
     margin-bottom: 50px;
-    max-width: 1100px;
+    max-width: 1150px;
     margin-left: auto;
     margin-right: auto;
   }
   .tskill h3 {
     font-size: 1.5rem;
     color: #5b6130;
-    margin-bottom: 20px;
-    border-left: 4px solid #3498db;
+    margin-bottom: 30px;
+    border-bottom: 2px solid #4bf74b;
     padding-left: 15px;
     letter-spacing: 1px;
+    text-align: center;
   }
   .tskill h4 {
     font-size: 1.3rem;
@@ -463,6 +464,11 @@ body {
     list-style: none;
     padding-left: 0;
     margin-bottom: 25px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 15px;
+    max-width: 1150px;
+    margin: 0 auto;
   }
   .tskill ul li {
     background-color: #fff;
@@ -518,7 +524,7 @@ body {
   }
   body.dark-mode .tskill h3 {
     color: #f5f5f5;
-    border-left: 4px solid #00bcd4;
+    border-bottom: 2px solid #72c072;
   }
   body.dark-mode .tskill h4 {
     color: #bbbbbb;
