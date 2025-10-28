@@ -45,9 +45,9 @@ body {
   @keyframes colorCycl {
     0%   { color: #ff4d4d; }   
     25%  { color: #4da6ff; }   
-    50%  { color: #47d147; }  
-    75%  { color: #ffcc00; }  
-    100% { color: #ff4d4d; } 
+    50%  { color: #4bf74b; }  
+    75%  { color: #cfa910; }  
+    100% { color: #f02c2c; } 
   }
   .nav-links {
     display: flex;
@@ -64,6 +64,7 @@ body {
   }
   .nav-links li a:hover {
     color: #4ecdc4;
+    text-decoration: underline;
   }
   .menu-toggle {
     display: none;
@@ -94,7 +95,7 @@ body {
   }
 
 /* Responsive Navigation */
-@media (max-width: 768px) {
+@media (max-width: 1068px) {
   .nav-links {
     position: absolute;
     top: 100%;
@@ -113,7 +114,6 @@ body {
   }
   .logo {
     font-size: 1.5rem;
-    margin-bottom: 0.5rem;
   }
   .nav-links.open {
     display: flex;
