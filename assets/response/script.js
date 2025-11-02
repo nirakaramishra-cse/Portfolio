@@ -23,27 +23,33 @@
     });
   }
 
-// Dark Mode Toggle 
-  const darkModeToggle = document.getElementById('themeToggle');
+  // Dark Mode Toggle
+const darkModeToggle = document.getElementById('themeToggle');
 
-// Toggle dark mode on click and save state
-  if (darkModeToggle) {
-    darkModeToggle.addEventListener('click', () => {
-      document.body.classList.toggle('dark-mode');
-      const isDark = document.body.classList.contains('dark-mode');
-      localStorage.setItem('theme', isDark ? 'dark' : 'light');
-    });
+// Apply saved theme on page load (default: dark)
+window.addEventListener('DOMContentLoaded', () => {
+  const savedTheme = localStorage.getItem('theme');
+
+  if (savedTheme === 'light') {
+    // If the user previously chose light mode
+    document.body.classList.remove('dark-mode');
+  } else {
+    // Default to dark mode
+    document.body.classList.add('dark-mode');
   }
 
-// Apply saved theme on page load
-  window.addEventListener('DOMContentLoaded', () => {
-    const savedTheme = localStorage.getItem('theme');
-    if (savedTheme === 'dark') {
-      document.body.classList.add('dark-mode');
-    }
-    // Start typing animation
-    type();
+  // Start typing animation
+  type();
+});
+
+// Toggle dark/light mode on click and save the state
+if (darkModeToggle) {
+  darkModeToggle.addEventListener('click', () => {
+    document.body.classList.toggle('dark-mode');
+    const isDark = document.body.classList.contains('dark-mode');
+    localStorage.setItem('theme', isDark ? 'dark' : 'light');
   });
+}
 
 // Typing animation
   const textArray = [
