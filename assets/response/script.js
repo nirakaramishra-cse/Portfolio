@@ -23,31 +23,36 @@
     });
   }
 
-  // Dark Mode Toggle
+  // Get the toggle button
 const darkModeToggle = document.getElementById('themeToggle');
+
+// Function to apply the theme and update button text
+function applyTheme(theme) {
+  if (theme === 'dark') {
+    document.body.classList.add('dark-mode');
+    darkModeToggle.textContent = '☀️ Light Mode';
+  } else {
+    document.body.classList.remove('dark-mode');
+    darkModeToggle.textContent = '🌙 Dark Mode';
+  }
+}
 
 // Apply saved theme on page load (default: dark)
 window.addEventListener('DOMContentLoaded', () => {
-  const savedTheme = localStorage.getItem('theme');
+  const savedTheme = localStorage.getItem('theme') || 'dark'; // default dark
+  applyTheme(savedTheme);
 
-  if (savedTheme === 'light') {
-    // If the user previously chose light mode
-    document.body.classList.remove('dark-mode');
-  } else {
-    // Default to dark mode
-    document.body.classList.add('dark-mode');
-  }
-
-  // Start typing animation
-  type();
+  // Start typing animation if you have one
+  if (typeof type === 'function') type();
 });
 
-// Toggle dark/light mode on click and save the state
+// Toggle on click and save state
 if (darkModeToggle) {
   darkModeToggle.addEventListener('click', () => {
-    document.body.classList.toggle('dark-mode');
-    const isDark = document.body.classList.contains('dark-mode');
-    localStorage.setItem('theme', isDark ? 'dark' : 'light');
+    const isDark = document.body.classList.toggle('dark-mode');
+    const newTheme = isDark ? 'dark' : 'light';
+    localStorage.setItem('theme', newTheme);
+    applyTheme(newTheme);
   });
 }
 
