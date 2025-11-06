@@ -58,10 +58,10 @@ if (darkModeToggle) {
 
 // Typing animation
   const textArray = [
-  "Hello, I'm Nirakara Mishra 👋",
-  "Aspiring Cybersecurity Professional 🔐",
-  "Ethical Hacker in Training 💻",
-  "Committed to Building Secure Systems 🛡️"
+  "Hello, I'm Nirakara Mishra 👋" ,
+  "Cybersecurity Enthusiast 🔐",
+  "Digital Defender & Ethical Hacker-in-Training 🛡️", 
+  "Committed to Building a Safer Digital Future 🌐"
 ];
 
   let typingIndex = 0;
