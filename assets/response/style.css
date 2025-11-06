@@ -217,7 +217,7 @@ body {
     100% { color: #ff4d4d; text-shadow: 0 0 6px rgba(255, 77, 77, 0.5); }
   }
   #hero .btnn {
-    margin-top: 50px;
+    margin-top: 40px;
     display: inline-block;
     padding: 0.8rem 1.5rem;
     background: #4ecdc4;
@@ -259,7 +259,7 @@ body {
     line-height: 1.5;
   }
   #hero .btnn {
-    margin-top: 50px;
+    margin-top: 30px;
     padding: 0.7rem 1.2rem;
     font-size: 1rem;
   }
@@ -703,22 +703,35 @@ body {
   }
   .education-entry ul {
     list-style: none;
-    padding-left: 10px;
+    padding-left: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 15px;
+    max-width: 1100px;
+    margin: 0 auto;
+    margin-bottom: 25px;
   }
   .education-entry ul li {
     padding: 6px 0;
-    font-size: 1rem;
+    padding: 5px 0;
     color: #444;
-    display: flex;
-    align-items: center;
+    font-size: 15px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.06);
+    font-family: 'Segoe UI', sans-serif;
+    padding-left: 2.2rem;
+    background-color: #fff;
+    border-radius: 4px;
   }
-  .education-entry ul li::before {
-    content: ' ';
-    margin-right: 10px;
-    font-size: 1.2rem;
+  .education-entry ul li:hover {
+    background-color: #ecf5fc;
+    transform: translateX(4px);
   }
   .education-entry ul li:hover::before {
     content: '🎓';
+    position: absolute;
+    left: 10px;
+    top: 10%;
+    font-size: 1rem;
   }
 
 /* Dark Mode Education Section */
@@ -752,7 +765,9 @@ body {
     color: #79c0ff;
   }
   body.dark-mode .education-entry ul li {
-    color: #d2dae2;
+    color: #c9d1d9;
+    background-color: #1e1e1e;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
   }
 
 /* Certifications Section */
@@ -792,28 +807,36 @@ body {
     line-height: 1.6;
   }
   .cert-card ul {
-    margin-top: 10px;
-    padding-left: 20px;
+    padding-left: 0;
     list-style: none;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 15px;
+    margin: 0 auto;
+    max-width: 1100px;
+    margin-bottom: 25px;
   }
   .cert-card ul li {
-    margin-bottom: 6px;
-    font-size: 1rem;
-    line-height: 1.6;
-    position: relative;
-    padding-left: 20px;
-    padding: 6px 0;
-    align-items: center;
+    margin: 6px 0;
+    padding: 5px 0;
     color: #444;
+    font-size: 15px;
+    padding-left: 2.2rem;
+    background-color: #fff;
+    font-family: 'Segoe UI', sans-serif;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.06);
+    border-radius: 4px;
   }
-  .cert-card ul li::before {
-    content: ' ';
-    margin-right: 10px;
-    font-size: 1.3rem;
-    color: #00bcd4;
+  .cert-card ul li:hover {
+    background-color: #ecf5fc;
+    transform: translateX(4px);
   }
   .cert-card ul li:hover::before {
     content: '☑️';
+    position: absolute;
+    left: 10px;
+    top: 5px;
+    font-size: 1rem;
   }
   .badge-wrapper {
     display: grid;
@@ -869,14 +892,15 @@ body {
 @media (max-width: 768px) {
   .cert-card {
     padding: 20px;
-    margin: 15px 10px;
   }
   .cert-card h3 {
     font-size: 1.2rem;
   }
-  .cert-card p,
-  .cert-card ul li {
+  .cert-card p {
     font-size: 0.9rem;
+  .cert-card ul li {
+    font-size: 14px;
+    padding: 9px 12px 9px 2.2rem;
   }
   #certifications h2 {
     font-size: 1.6rem;
@@ -904,6 +928,8 @@ body {
   }
   body.dark-mode .cert-card ul li {
     color: #c9d1d9;
+    background-color: #1e1e1e;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
   }
   body.dark-mode .cert-card ul li::before {
     color: #3fb950;
