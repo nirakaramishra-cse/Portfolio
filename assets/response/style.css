@@ -898,6 +898,7 @@ body {
   }
   .cert-card p {
     font-size: 0.9rem;
+  }  
   .cert-card ul li {
     font-size: 14px;
     padding: 9px 12px 9px 2.2rem;
@@ -1347,5 +1348,3 @@ body {
   body.dark-mode #backToTopBtn:hover {
     background-color: #005a91;
   }
-}
-
