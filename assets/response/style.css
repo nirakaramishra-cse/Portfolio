@@ -722,8 +722,8 @@ body {
     border-radius: 4px;
   }
   .education-entry ul li:hover {
-    background-color: #ecf5fc;
-    transform: translateX(4px);
+    background-color: #cadae7;
+    transform: translateY(-4px);
   }
   .education-entry ul li:hover::before {
     content: '🎓';
@@ -778,6 +778,10 @@ body {
     color: #c9d1d9;
     background-color: #1e1e1e;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+  }
+  body.dark-mode .education-entry ul li:hover {
+    background-color: #3b4350;
+    transform: translateY(-4px);
   }
 
 /* Certifications Section */
@@ -838,8 +842,8 @@ body {
     border-radius: 4px;
   }
   .cert-card ul li:hover {
-    background-color: #ecf5fc;
-    transform: translateX(4px);
+    background-color: #dee6ec;
+    transform: translateY(-4px);
   }
   .cert-card ul li:hover::before {
     content: '☑️';
@@ -945,6 +949,10 @@ body {
   }
   body.dark-mode .cert-card ul li::before {
     color: #3fb950;
+  }
+  body.dark-mode .cert-card ul li:hover {
+    background-color: #172941;
+    transform: translateY(-4px);
   }
   body.dark-mode .certificate .btn {
     background-color: #238636;
