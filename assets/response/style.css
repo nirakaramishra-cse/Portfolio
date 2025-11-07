@@ -737,8 +737,11 @@ body {
   .education-entry ul li {
     font-size: 14px;
     padding: 9px 12px 9px 2.2rem;
-    margin: 0;
   }
+  .education-entry {
+    margin: 0 auto;
+    padding: 20px;
+  }  
 }
 
 /* Dark Mode Education Section */
