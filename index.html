@@ -44,7 +44,7 @@
           <li><a href="#testimonials">Testimonials</a></li>
           <li><a href="#contact">Contact</a></li>
         </ul>
-      <div class="menu-toggle" onclick="toggleMenu(this)">☰</div>
+      <div class="menu-toggle" id="menuIcon" onclick="toggleMenu(this)">☰</div>
         <button class="bttn" id="themeToggle">☀️ Light Mode</button>
     </nav>
   </header>
@@ -52,8 +52,9 @@
   <!-- Hero Section -->
   <div class="hero-wrapper">
   <section id="hero">
+    <!-- Canvas for binary rain -->
+    <canvas id="binaryRain" aria-hidden="true"></canvas>
     <img src="assets/images/background image.webp" alt="Background" class="hero-img">
-
     <div class="hero-content">
       <div class="fixed-top-content">
         <h1><span id="typing"></span></h1>
@@ -168,8 +169,17 @@
         <li>🌱 <strong>Growth Mindset & Continuous Learning</strong> – Upskilling through courses, certifications, and challenges</li>
         <li>🌍 <strong>Diversity & Awareness</strong> – Embrace inclusivity, give security awareness sessions</li>
       </ul>
-
     </div>
+
+    <div class="verify-skills">
+    <a href="https://www.credly.com/users/nirakaramishra-cse/skills" 
+      target="_blank" 
+      rel="noopener noreferrer"
+      class="matrix-btn">
+      VERIFY MY SKILLS
+    </a>
+    </div>
+
   </section>
 
   <!-- Project Section -->

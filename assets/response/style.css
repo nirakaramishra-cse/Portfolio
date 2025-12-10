@@ -80,6 +80,8 @@ body {
     cursor: pointer;
     font-weight: bold;
     transition: background 0.3s ease;
+    border-color: #07f107;
+    border-style: solid;
   }
   .bttn:hover {
     background: #38b2ac;
@@ -96,27 +98,43 @@ body {
 
 /* Responsive Navigation */
 @media (max-width: 1068px) {
+
   .nav-links {
     position: absolute;
-    top: 100%;
-    left: 0;
-    right: 0;
-    background: #fff;
+    right: 1.5rem;
+    top: 72px;
+    width: min(88%, 460px);
+    max-width: 92%;
+    background: linear-gradient(180deg, #F9F9F8, rgb(240, 240, 240));
+    backdrop-filter: blur(8px);
+    border-radius: 12px;
+    padding: 1rem;
+    box-shadow: 0 18px 48px rgba(0,0,0,0.5);
     flex-direction: column;
+    border-color: #32a1ce #00ff00;
+    border-style: dotted;
     align-items: center;
     display: none;
     transition: all 0.3s ease;
     padding: 1rem 0;
     box-shadow: 0 4px 10px rgba(0,0,0,0.1);
     z-index: 999;
-    margin-top: 1rem;
-    width: 100%;
+  }
+  .nav-links a { 
+    display: block; 
+    width: 100%; 
+    padding: 0.3rem; 
+    border-radius: 10px;
+    pointer-events: auto;
   }
   .logo {
     font-size: 1.5rem;
   }
   .nav-links.open {
     display: flex;
+    pointer-events: auto;
+    transform: translateY(0) scale(1);
+    opacity: 1;
   }
   .menu-toggle {
     display: block;
@@ -124,7 +142,8 @@ body {
     cursor: pointer;
   }
   body.dark-mode .nav-links {
-    background-color: #161b22;
+    background: linear-gradient(180deg, rgba(0,0,0,0.76), rgba(20,20,20,0.86));
+    backdrop-filter: blur(8px);
   }
 }
 /*  Hero Section */
@@ -1367,3 +1386,119 @@ body {
   body.dark-mode #backToTopBtn:hover {
     background-color: #005a91;
   }
+
+  .verify-skills {
+  margin-top: 2rem;
+  text-align: center; 
+  }
+
+  .matrix-btn {
+    display: inline-block;
+    padding: 0.75rem 1.8rem;
+    font-size: 1rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: #008000;
+    background: #ffffff;
+    border: 2px solid #008000;
+    border-radius: 10px;
+    position: relative;
+    transition: 0.25s ease;
+    overflow: hidden;
+  }
+
+  .matrix-btn:hover {
+    transform: scale(1.04);
+    background: #e8ffe8;
+    border-color: #00b300;
+    color: #00b300;
+  }
+
+  body.dark-mode .matrix-btn {
+    color: #00ff00;
+    background: rgba(0, 20, 0, 0.85);
+    border: 2px solid #00ff00;
+    box-shadow: 0 0 14px rgba(0, 255, 0, 0.30);
+  }
+
+/* Neon Border Animation */
+  body.dark-mode .matrix-btn::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 10px;
+    padding: 2px;
+    background: linear-gradient(120deg,
+                rgba(0,255,0,0.1),
+                rgba(0,255,0,0.6),
+                rgba(0,255,0,0.1));
+    -webkit-mask: 
+        linear-gradient(#fff 0 0) content-box,
+        linear-gradient(#fff 0 0);
+    mask: 
+        linear-gradient(#fff 0 0) content-box,
+        linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+            mask-composite: exclude;
+    animation: neonMove 3s linear infinite;
+  }
+
+  @keyframes neonMove {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+
+  body.dark-mode .matrix-btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 22px rgba(0, 255, 0, 0.45);
+  }
+
+  @media (max-width: 768px) {
+
+  .matrix-btn {
+    padding: 0.65rem 1.4rem;
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+    border-width: 1.5px;
+  }
+
+  body.dark-mode .matrix-btn {
+    box-shadow: 0 0 10px rgba(0, 255, 0, 0.20);
+  }
+
+  body.dark-mode .matrix-btn:hover {
+    transform: scale(1.03);
+    box-shadow: 0 0 16px rgba(0, 255, 0, 0.32);
+  }
+}
+
+/* canvas placed above background image but below content */
+  #binaryRain {
+    position: absolute;
+    inset: 0;              /* top:0; right:0; bottom:0; left:0; */
+    width: 100%;
+    height: 100%;
+    z-index: 1;            /* hero-img should be z-index:0; hero-content z-index:2 */
+    pointer-events: none;  /* clicks pass through */
+    mix-blend-mode: screen; /* nice blend on dark backgrounds */
+    opacity: 0.5;         /* default opacity (tweak as needed) */
+    transition: opacity 0.4s ease;
+  }
+
+/* Keep canvas hidden in light mode */
+  body:not(.dark-mode) #binaryRain {
+    display: none;
+  }
+
+/* Mobile: reduce intensity & opacity */
+  @media (max-width: 786px) {
+    #binaryRain { opacity: 0.4; }
+  }
+
+/* Respect reduced motion preference */
+  @media (prefers-reduced-motion: reduce) {
+    #binaryRain { display: none; }
+  }
+
