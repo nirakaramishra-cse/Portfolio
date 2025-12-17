@@ -71,20 +71,37 @@ body {
     font-size: 1.8rem;
     cursor: pointer;
   }
+
+ /* Base button style (LIGHT MODE by default) */
   .bttn {
     padding: 0.4rem 0.7rem;
     margin-left: 1rem;
-    background: #4ecdc4;
-    border: none;
-    border-radius: 25px;
+    background: #e6fffa;          /* light background */
+    color: #065f46;               /* dark text */
+    border: 1px solid #38b2ac;
+    border-radius: 20px;
     cursor: pointer;
     font-weight: bold;
-    transition: background 0.3s ease;
-    border-color: #07f107;
-    border-style: solid;
+    transition: background 0.25s ease, color 0.25s ease, box-shadow 0.25s ease;
   }
+
   .bttn:hover {
     background: #38b2ac;
+    color: #ffffff;
+    box-shadow: 0 0 8px rgba(56, 178, 172, 0.4);
+  }
+  
+  body.dark-mode .bttn {
+    background: #0f2e2b;          /* dark teal */
+    color: #17f05f;               /* neon green */
+    border: 1px solid #17f05f;
+    box-shadow: 0 0 6px rgba(23, 240, 95, 0.25);
+  }
+  
+  body.dark-mode .bttn:hover {
+    background: #083d32;
+    color: #00ff7f;
+    box-shadow: 0 0 12px rgba(0, 255, 127, 0.45);
   }
 
 /* Dark mode Navigation */
@@ -307,15 +324,16 @@ body {
     color: #c1e9e2;
   }
   body.dark-mode #hero .btnn {
-    background-color: #21262d;
-    color: #f0f6fc;
-    border: 1px solid #30363d;
+    background: rgba(0, 20, 0, 0.85);
+    color: #00b300;
+    border: 1px solid #00ff00;
     box-shadow: 0 0 10px rgba(33, 38, 45, 0.6);
   }
   body.dark-mode #hero .btnn:hover {
-    background-color: #30363d;
+    background-color: rgba(0, 20, 0, 0.85);
     color: #58a6ff;
     border-color: #58a6ff;
+    transform: scale(1.05);
   }
 
 /* About Section */
