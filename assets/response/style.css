@@ -24,23 +24,29 @@ body {
     scroll-behavior: smooth;
   }
   nav {
+    position: sticky;
+    gap: 1rem;
     width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1rem 2rem;
+    padding: 0.6rem 1rem;
     background: #fff;
     color: #000;
     position: sticky;
     top: 0;
-    z-index: 1000;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    z-index: 1200;
+    background: linear-gradient(180deg, rgba(0,0,0,0.35), rgba(255,255,255,0.02));
+    backdrop-filter: blur(6px);
+    border-bottom: 1px solid rgba(255,255,255,0.03);
   }
   .logo {
-    font-size: 1.8rem;
-    font-weight: bold;
     animation: colorCycle 5s linear infinite;
-    margin-right: 10px;
+    font-weight: 800;
+    text-decoration: none;
+    letter-spacing: 0.6px;
+    font-size: 1.3rem;
+    display: inline-block;
   }
   @keyframes colorCycl {
     0%   { color: #ff4d4d; }   
@@ -143,9 +149,6 @@ body {
     padding: 0.3rem; 
     border-radius: 10px;
     pointer-events: auto;
-  }
-  .logo {
-    font-size: 1.5rem;
   }
   .nav-links.open {
     display: flex;
