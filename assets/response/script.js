@@ -42,10 +42,10 @@ const darkModeToggle = document.getElementById('themeToggle');
 function applyTheme(theme) {
   if (theme === 'dark') {
     document.body.classList.add('dark-mode');
-    darkModeToggle.textContent = '☀️ Light Mode';
+    darkModeToggle.textContent = '☀️ Light';
   } else {
     document.body.classList.remove('dark-mode');
-    darkModeToggle.textContent = '🌙 Dark Mode';
+    darkModeToggle.textContent = '🌙 Dark';
   }
 }
 
