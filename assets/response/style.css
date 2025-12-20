@@ -86,7 +86,7 @@ body {
   content: "";
   position: absolute;
   left: 0;
-  bottom: 0.5px;
+  bottom: -2px;
   width: 0%;
   height: 2px;
   background-color: #58a6ff;
@@ -94,6 +94,7 @@ body {
   }
   .nav-links li a:hover {
     color: #58a6ff;
+    transform: translateY(-2px);
   }
   .nav-links li a:hover::after {
     width: 100%;
@@ -151,6 +152,7 @@ body {
   body.dark-mode nav {
     background-color: #161b22;
     color: #f0f6fc;
+    border-bottom: 1px solid rgba(255,255,255,0.45);
   }
 
 /* Responsive Navigation */
