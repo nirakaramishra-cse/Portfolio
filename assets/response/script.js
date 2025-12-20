@@ -22,18 +22,29 @@
   });
   });
 
-// Scroll to top smoothly
-  function scrollToTop() {
-    window.scrollTo({ top: 0, behavior: "smooth" });
-  }
-
-// Back-to-top button show/hide on scrolling
+// Back-to-top button 
+  document.addEventListener("DOMContentLoaded", () => {
   const backToTopBtn = document.getElementById("backToTopBtn");
-  if (backToTopBtn) {
-    window.addEventListener("scroll", () => {
-      backToTopBtn.style.display = window.scrollY > 250 ? "block" : "none";
+
+  if (!backToTopBtn) return;
+
+  // Show / hide button on scroll
+  window.addEventListener("scroll", () => {
+    if (window.scrollY > 250) {
+      backToTopBtn.classList.add("show");
+    } else {
+      backToTopBtn.classList.remove("show");
+    }
+  });
+
+  // Scroll smoothly to top on click
+  backToTopBtn.addEventListener("click", () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth"
     });
-  }
+  });
+});
 
   // Get the toggle button
 const darkModeToggle = document.getElementById('themeToggle');
