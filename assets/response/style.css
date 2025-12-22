@@ -71,20 +71,47 @@ nav {
 .logo {
   display: flex;
   align-items: center;
-  gap: 8px;  
-  font-size: 1.1rem;
+  gap: 4px;
+  font-size: 1.3rem;
   letter-spacing: 0.6px;
   font-weight: 800;
   color: #38b2ac;
   text-decoration: none;
-  margin-right: 1.5rem;
-}
+  }
 
-.logo img {
-  width: 28px;
-  height: 28px;
-  object-fit: contain;
-}
+  /* Inline SVG icon */
+  .logo-icon {
+    width: 28px;
+    height: 28px;
+    transition: transform 0.2s ease;
+  }
+
+  /* Hover effect */
+  .logo:hover .logo-icon {
+    transform: scale(1.05);
+  }
+
+  .logo:focus-visible {
+    outline: 2px solid currentColor;
+    outline-offset: 4px;
+  }
+
+  /* Dark mode */
+  body.dark-mode .logo {
+    color: #00ff7f;
+  }
+
+  @media (max-width: 768px) {
+    .logo {
+      font-size: 1.15rem;
+    }
+
+    .logo-icon {
+      width: 24px;
+      height: 24px;
+    }
+  }
+
 
 /* =========================
    Navigation Links
@@ -186,10 +213,6 @@ body.dark-mode nav {
   border-bottom: 1px solid rgba(0, 255, 127, 0.25);
 }
 
-body.dark-mode .logo {
-  color: #00ff7f;
-}
-
 body.dark-mode .nav-links li a:hover {
   color: #00ff7f;
 }
@@ -251,10 +274,6 @@ body.dark-mode .bttn:hover {
   .nav-links.open {
     display: flex;
   }
-
-.logo {
-  margin-right: 0;
-}
 
   body.dark-mode .nav-links {
     background: linear-gradient(
