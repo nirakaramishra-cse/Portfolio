@@ -1,0 +1,31 @@
+
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  viewBox="0 0 48 48"
+  width="48"
+  height="48"
+  fill="none"
+>
+  <!-- Shield -->
+  <path
+    d="M24 3
+       C17 7,10 8,10 8
+       V24
+       C10 32,17 38,24 45
+       C31 38,38 32,38 24
+       V8
+       C38 8,31 7,24 3 Z"
+    stroke="#00ff7f"
+    stroke-width="3"
+    stroke-linejoin="round"
+  />
+
+  <!-- Bold N -->
+  <path
+    d="M18 17 V31 L30 17 V31"
+    stroke="#00ff7f"
+    stroke-width="4"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+  />
+</svg>
