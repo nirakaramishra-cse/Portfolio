@@ -642,31 +642,6 @@ body.dark-mode #hero .btnn:hover {
     }
   }
 
-  .grid-section {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 1rem;
-    width: 100%;
-    padding: 1rem;
-  }
-
-  .grid-item {
-    width: 100%;
-    box-sizing: border-box;
-  }
-
-  .grid-item iframe {
-    width: 100%;
-    border: none;
-    display: block;
-  }
-
-  @media (max-width: 768px) {
-    .grid-section {
-      padding: 0.5rem;
-    }
-  }
-
 
   /* =========================
    Skills Section
@@ -872,209 +847,159 @@ body.dark-mode .matrix-btn:hover::before {
 }
 
 
-
 /* =========================
-   Skills Section
+   Hands-On Learning Section
    ========================= */
-#skills {
+#hands-on {
+  padding: 60px 30px;
   background-color: #f7f9fc;
-  padding: 60px 20px;
   color: #000000;
-  scroll-margin-top: 80px;
 }
 
-#skills h2 {
-  font-size: 2rem;
+/* Section Title */
+#hands-on h2 {
   text-align: center;
-  margin-bottom: 40px;
+  font-size: 2rem;
+  margin-bottom: 35px;
   color: #222;
 }
 
 /* =========================
-   Skill Group
+   TryHackMe Card
    ========================= */
-.tskill {
-  max-width: 1150px;
-  margin: 0 auto 50px;
-}
+.thm-card {
+  max-width: 380px;
+  margin: 0 auto 35px;
+  padding: 22px 24px;
 
-.tskill h3 {
-  font-size: 1.5rem;
-  color: #38b2ac;
-  margin-bottom: 30px;
-  border-bottom: 2px solid #38b2ac;
-  text-align: center;
-  letter-spacing: 1px;
-}
-
-.tskill h4 {
-  font-size: 1.3rem;
-  color: #555;
-  margin: 30px 0 10px;
-  font-weight: bold;
-  text-decoration: underline;
-}
-
-/* =========================
-   Skill List
-   ========================= */
-.tskill ul {
-  list-style: none;
-  padding: 0;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  gap: 15px;
-  max-width: 1150px;
-  margin: 0 auto 25px;
-}
-
-.tskill ul li {
-  position: relative;
-  padding: 10px 15px 10px 2.2rem;
   background-color: #ffffff;
-  border-left: 4px solid #38b2ac;
-  border-radius: 6px;
-  font-size: 15px;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.06);
-  transition: background-color 0.2s ease, transform 0.2s ease;
-}
+  border-radius: 14px;
+  border-top: 3px solid #38b2ac;
 
-/* Hover Icon (Hidden by default) */
-.tskill ul li::before {
-  content: "💡";
-  position: absolute;
-  left: 10px;
-  top: 50%;
-  transform: translateY(-50%) scale(0.8);
-  opacity: 0;
-  transition: opacity 0.2s ease, transform 0.2s ease;
-}
-
-.tskill ul li:hover {
-  background-color: #ecf5fc;
-  transform: translateX(4px);
-}
-
-.tskill ul li:hover::before {
-  opacity: 1;
-  transform: translateY(-50%) scale(1);
-}
-
-/* =========================
-   Verify Skills Button
-   ========================= */
-.verify-skills {
-  margin-top: 2rem;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
   text-align: center;
-}
 
-.matrix-btn {
-  display: inline-block;
-  padding: 0.75rem 1.8rem;
-  font-size: 1rem;
-  font-weight: 700;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  text-decoration: none;
-
-  color: #065f46;
-  background: #ffffff;
-  border: 2px solid #38b2ac;
-  border-radius: 10px;
-
-  position: relative;
   transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
-.matrix-btn:hover {
-  transform: scale(1.04);
-  box-shadow: 0 0 10px rgba(56, 178, 172, 0.35);
+.thm-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.12);
+}
+
+.thm-card h3 {
+  font-size: 1.25rem;
+  margin-bottom: 8px;
+  color: #38b2ac;
+}
+
+.thm-card p {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: #555;
+  margin-bottom: 18px;
+}
+
+/* Button */
+.thm-btn {
+  display: inline-block;
+  padding: 8px 18px;
+
+  background-color: #38b2ac;
+  color: #ffffff;
+  border-radius: 8px;
+
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.9rem;
+
+  transition: background-color 0.25s ease, transform 0.2s ease;
+}
+
+.thm-btn:hover {
+  background-color: #2c9a94;
+  transform: translateY(-2px);
 }
 
 /* =========================
-   Dark Mode – Skills
+   TryHackMe Embed 
    ========================= */
-body.dark-mode #skills {
+.thm-embed {
+  max-width: 420px;
+  margin: 0 auto;
+  display: flex;             
+  justify-content: center; 
+  padding: 0 44px;
+}
+
+.thm-embed iframe {
+  max-width: 420px;  
+  width: 100%;
+  height: auto;
+  border: none;
+  border-radius: 10px;
+  display: block; 
+}
+
+
+/* =========================
+   Dark Mode
+   ========================= */
+body.dark-mode #hands-on {
   background-color: #0d1117;
   color: #f0f6fc;
 }
 
-body.dark-mode #skills h2 {
-  color: #ffffff;
+body.dark-mode #hands-on h2 {
+  color: #f0f6fc;
 }
 
-body.dark-mode .tskill h3 {
+body.dark-mode .thm-card {
+  background-color: #161b22;
+  border-top-color: #00ff7f;
+  box-shadow: 0 6px 18px rgba(240, 246, 252, 0.05);
+}
+
+body.dark-mode .thm-card h3 {
   color: #00ff7f;
-  border-bottom-color: #00ff7f;
 }
 
-body.dark-mode .tskill h4 {
-  color: #bbbbbb;
+body.dark-mode .thm-card p {
+  color: #c9d1d9;
 }
 
-body.dark-mode .tskill ul li {
-  background-color: #0f172a;
-  border-left-color: #00ff7f;
-}
-
-body.dark-mode .tskill ul li:hover {
-  background-color: rgba(0,255,127,0.08);
-}
-
-body.dark-mode .tskill ul li:hover::before {
-  filter: drop-shadow(0 0 6px rgba(0,255,127,0.8));
-}
-
-/* =========================
-   Dark Mode – Verify Button
-   ========================= */
-body.dark-mode .matrix-btn {
+body.dark-mode .thm-btn {
+  background-color: #0f2e2b;
   color: #00ff7f;
-  background: rgba(0, 20, 0, 0.85);
-  border-color: #00ff7f;
+  border: 1px solid #00ff7f;
 }
 
-body.dark-mode .matrix-btn::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  border-radius: 10px;
-  opacity: 0;
-  transition: opacity 0.3s ease;
-}
-
-body.dark-mode .matrix-btn:hover::before {
-  opacity: 1;
-  animation: neonMove 3s linear infinite;
-}
-
-@keyframes neonMove {
-  from { transform: rotate(0deg); }
-  to   { transform: rotate(360deg); }
+body.dark-mode .thm-btn:hover {
+  background-color: #083d32;
 }
 
 /* =========================
    Responsive
    ========================= */
 @media (max-width: 768px) {
-  #skills {
+  #hands-on {
     padding: 40px 15px;
   }
 
-  .tskill h3 {
-    font-size: 1.3rem;
+  #hands-on h2 {
+    font-size: 1.6rem;
   }
 
-  .tskill h4 {
-    font-size: 1.1rem;
+   .thm-embed {
+    padding: 0 25px;
   }
 
-  .matrix-btn {
-    padding: 0.65rem 1.4rem;
-    font-size: 0.9rem;
-    letter-spacing: 1px;
+  .thm-embed iframe {
+    max-width: 100%;
+    height: auto;
   }
 }
+
 
 
 /* =========================
@@ -1250,676 +1175,867 @@ body.dark-mode .project-card .btnn:hover {
   }
 }
 
-/* Education Section */
-  #education {
-    padding: 60px 20px;
-    background-color: #f7f9fc; /* Light background for contrast */
-    border-top: 2px solid #ccc;
-    color: #000000;
-  }
-  #education h2 {
-    text-align: center;
-    font-size: 2rem;
-    margin-bottom: 30px;
-    color: #1f1f1f;
-  }
-  .education-entry {
-    max-width: 1100px;
-    margin-left: auto;
-    margin-right: auto;
-    margin: 0 auto;
-    background: #ffffff;
-    padding: 25px 30px;
-    border-radius: 12px;
-    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
-    transition: transform 0.3s ease;
-  }
-  .education-entry:hover {
-    transform: translateY(-4px);
-  }
-  .education-entry h3 {
-    font-size: 1.4rem;
-    margin-bottom: 15px;
-    color: #2c3e50;
-  }
-  .education-entry p {
-    font-size: 1rem;
-    margin: 8px 0;
-    color: #333;
-    line-height: 1.6;
-  }
-  .education-entry p strong {
-    color: #2a2a2a;
-  }
-  .education-entry a {
-    color: #0066cc;
-    text-decoration: none;
-  }
-  .education-entry a:hover {
-    text-decoration: underline;
-  }
-  .education-entry ul {
-    list-style: none;
-    padding-left: 0;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
-    gap: 15px;
-    max-width: 1100px;
-    margin: 0 auto;
-    margin-bottom: 25px;
-  }
-  .education-entry ul li {
-    padding: 5px 0;
-    color: #444;
-    font-size: 15px;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.06);
-    font-family: 'Segoe UI', sans-serif;
-    padding-left: 2.2rem;
-    background-color: #fff;
-    border-radius: 4px;
-  }
-  .education-entry ul li:hover {
-    background-color: #cadae7;
-    transform: translateY(-4px);
-  }
-  .education-entry ul li:hover::before {
-    content: '🎓';
-    position: absolute;
-    left: 10px;
-    top: 10%;
-    font-size: 1rem;
-  }
 
-  @media (max-width: 768px) { 
-  .education-entry ul li {
-    font-size: 14px;
-    padding: 9px 12px 9px 2.2rem;
-  }
-  .education-entry {
-    margin: 0 auto;
-    padding: 20px;
-  }  
+/* =========================
+   Education Section
+   ========================= */
+#education {
+  padding: 60px 20px;
+  background-color: #f7f9fc;
+  color: #000000;
 }
 
-/* Dark Mode Education Section */
-  body.dark-mode #education {
-    background-color: #0d1117; 
-    border-top: 2px solid #30363d;
-    color: #f0f6fc;
-  }
-  body.dark-mode #education h2 {
-    color: #f0f6fc;
-  }
-  body.dark-mode .education-entry {
-    background: #161b22;
-    box-shadow: 0 4px 16px rgba(240, 246, 252, 0.08);
-    border: 1px solid #30363d;
-  }
-  body.dark-mode .education-entry h3 {
-    color: #58a6ff;
-  }
-  body.dark-mode .education-entry p {
-    color: #c9d1d9;
-  }
-  body.dark-mode .education-entry p strong {
-    color: #f0f6fc;
-  }
-  body.dark-mode .education-entry a {
-    color: #58a6ff;
-  }
-  body.dark-mode .education-entry a:hover {
-    text-decoration: underline;
-    color: #79c0ff;
-  }
-  body.dark-mode .education-entry ul li {
-    color: #c9d1d9;
-    background-color: #1e1e1e;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
-  }
-  body.dark-mode .education-entry ul li:hover {
-    background-color: #3b4350;
-    transform: translateY(-4px);
-  }
+#education h2 {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 30px;
+  color: #222;
+}
 
-/* Certifications Section */
-  #certifications {
-    padding: 60px 20px;
-    background-color: #f7f9fc;
-    color: #000000;
-  }
-  #certifications h2 {
-    text-align: center;
-    font-size: 2rem;
-    margin-bottom: 40px;
-    color: #333;
-  }
-  .cert-card {
-    background-color: #ffffff;
-    border-radius: 16px;
-    padding: 25px;
-    margin: 20px auto;
-    max-width: 1100px;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.07);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-  }
-  .cert-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
-  }
-  .cert-card h3 {
-    font-size: 1.4rem;
-    color: #2b2b2b;
-    margin-bottom: 10px;
-  }
-  .cert-card p {
-    margin: 5px 0;
-    font-size: 0.95rem;
-    color: #555;
-    line-height: 1.6;
-  }
-  .cert-card ul {
-    padding-left: 0;
-    list-style: none;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
-    gap: 15px;
-    margin: 0 auto;
-    max-width: 1100px;
-    margin-bottom: 25px;
-  }
-  .cert-card ul li {
-    margin: 6px 0;
-    padding: 5px 0;
-    color: #444;
-    font-size: 15px;
-    padding-left: 2.2rem;
-    background-color: #fff;
-    font-family: 'Segoe UI', sans-serif;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.06);
-    border-radius: 4px;
-  }
-  .cert-card ul li:hover {
-    background-color: #dee6ec;
-    transform: translateY(-4px);
-  }
-  .cert-card ul li:hover::before {
-    content: '☑️';
-    position: absolute;
-    left: 10px;
-    top: 5px;
-    font-size: 1rem;
-  }
-  .badge-wrapper {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-    gap: 30px;
-    max-width: 1100px;
-    margin: 0 auto;
-  }
-  .badge-container {
-    width: 170px; 
-    height: 290px; 
-    border: 1px solid #e0e0e0;
-    border-radius: 8px;
-    padding: 8px;
-    background-color: #ffffff;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    margin: 10px auto;
-    text-align: center;
-    position: relative;
-    color: #333;
-  }
-  .badge-title {
-    font-size: 14px;
-    font-weight: 600;
-    margin-bottom: 6px;
-    text-align: center;
-    color: #333;
-  }
-  .badge-container:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.12);
-  }
-  .certificate {
-    margin-top: 15px;
-    text-align: center;
-    margin-bottom: 10px;
-  }
-  .certificate .btn {
-    display: inline-block;
-    padding: 8px 18px;
-    background-color: #007bff;
-    color: #fff;
-    border-radius: 8px;
-    text-decoration: none;
-    font-weight: 500;
-    transition: background-color 0.3s ease;
-  }
-  .certificate .btn:hover {
-    background-color: #0056b3;
-  }
+/* =========================
+   Education Card
+   ========================= */
+.education-entry {
+  max-width: 1100px;
+  margin: 0 auto;
+  background: #ffffff;
+  padding: 25px 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
 
-/* Responsive Styling */
+.education-entry:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.12);
+}
+
+.education-entry h3 {
+  font-size: 1.4rem;
+  margin-bottom: 15px;
+  color: #38b2ac;
+}
+
+.education-entry p {
+  font-size: 1rem;
+  margin: 8px 0;
+  color: #333;
+  line-height: 1.6;
+}
+
+.education-entry p strong {
+  color: #111827;
+}
+
+.education-entry a {
+  color: #38b2ac;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.education-entry a:hover {
+  text-decoration: underline;
+}
+
+/* =========================
+   Highlights List
+   ========================= */
+.education-entry ul {
+  list-style: none;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
+  gap: 15px;
+  margin: 20px auto 25px;
+}
+
+.education-entry ul li {
+  position: relative;
+  padding: 9px 12px 9px 2.2rem;
+  background-color: #ffffff;
+  border-radius: 6px;
+  font-size: 15px;
+  color: #444;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.06);
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+/* Icon hidden by default */
+.education-entry ul li::before {
+  content: "🎓";
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  transform: translateY(-50%) scale(0.8);
+  opacity: 0;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.education-entry ul li:hover {
+  background-color: #ecf5fc;
+  transform: translateY(-3px);
+}
+
+.education-entry ul li:hover::before {
+  opacity: 1;
+  transform: translateY(-50%) scale(1);
+}
+
+/* =========================
+   Responsive
+   ========================= */
 @media (max-width: 768px) {
-  .cert-card {
+  .education-entry {
     padding: 20px;
   }
-  .cert-card h3 {
-    font-size: 1.2rem;
-  }
-  .cert-card p {
-    font-size: 0.9rem;
-  }  
-  .cert-card ul li {
+
+  .education-entry ul li {
     font-size: 14px;
-    padding: 9px 12px 9px 2.2rem;
-    margin: 0;
   }
+}
+
+/* =========================
+   Dark Mode – Education
+   ========================= */
+body.dark-mode #education {
+  background-color: #0d1117;
+  color: #f0f6fc;
+}
+
+body.dark-mode #education h2 {
+  color: #f0f6fc;
+}
+
+body.dark-mode .education-entry {
+  background: #161b22;
+  border: 1px solid #30363d;
+  box-shadow: 0 4px 16px rgba(240, 246, 252, 0.08);
+}
+
+body.dark-mode .education-entry h3 {
+  color: #00ff7f;
+}
+
+body.dark-mode .education-entry p {
+  color: #c9d1d9;
+}
+
+body.dark-mode .education-entry p strong {
+  color: #f0f6fc;
+}
+
+body.dark-mode .education-entry a {
+  color: #00ff7f;
+}
+
+body.dark-mode .education-entry ul li {
+  background-color: #0f172a;
+  color: #c9d1d9;
+}
+
+body.dark-mode .education-entry ul li:hover {
+  background-color: rgba(0,255,127,0.08);
+}
+
+
+/* =========================
+   Certifications Section
+   ========================= */
+#certifications {
+  padding: 60px 20px;
+  background-color: #f7f9fc;
+  color: #000000;
+}
+
+#certifications h2 {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 40px;
+  color: #222;
+}
+
+/* =========================
+   Certification Card
+   ========================= */
+.cert-card {
+  max-width: 1100px;
+  margin: 20px auto;
+  padding: 25px 30px;
+
+  background-color: #ffffff;
+  border-radius: 16px;
+
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.07);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.cert-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
+}
+
+.cert-card h3 {
+  font-size: 1.4rem;
+  color: #38b2ac;
+  margin-bottom: 10px;
+}
+
+.cert-card p {
+  font-size: 0.95rem;
+  color: #555;
+  margin: 6px 0;
+  line-height: 1.6;
+}
+
+/* =========================
+   Certification Skills List
+   ========================= */
+.cert-card ul {
+  list-style: none;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
+  gap: 15px;
+  margin: 20px auto 25px;
+}
+
+.cert-card ul li {
+  position: relative;
+  padding: 9px 12px 9px 2.2rem;
+
+  background-color: #ffffff;
+  color: #444;
+  font-size: 15px;
+
+  border-radius: 6px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.06);
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+/* Icon hidden by default */
+.cert-card ul li::before {
+  content: "☑";
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  transform: translateY(-50%) scale(0.8);
+  opacity: 0;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.cert-card ul li:hover {
+  background-color: #ecf5fc;
+  transform: translateY(-3px);
+}
+
+.cert-card ul li:hover::before {
+  opacity: 1;
+  transform: translateY(-50%) scale(1);
+}
+
+/* =========================
+   Certificate Button
+   ========================= */
+.certificate {
+  margin-top: 15px;
+  text-align: center;
+}
+
+.certificate .btn {
+  display: inline-block;
+  padding: 8px 18px;
+
+  background-color: #38b2ac;
+  color: #ffffff;
+
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+
+  transition: background-color 0.25s ease, transform 0.2s ease;
+}
+
+.certificate .btn:hover {
+  background-color: #2c9a94;
+  transform: translateY(-2px);
+}
+
+/* =========================
+   Badge Grid
+   ========================= */
+.badge-wrapper {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 30px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.badge-container {
+  width: 170px;
+  height: 290px;
+  margin: 10px auto;
+  padding: 8px;
+
+  background-color: #ffffff;
+  color: #333;
+
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.badge-container:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.12);
+}
+
+.badge-title {
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 6px;
+  color: #333;
+}
+
+/* =========================
+   Responsive
+   ========================= */
+@media (max-width: 768px) {
   #certifications h2 {
     font-size: 1.6rem;
   }
-}
 
-/* Dark Mode Certifications Section */
-  body.dark-mode #certifications {
-    background-color: #0d1117;
-    color: #f0f6fc;
-  }
-  body.dark-mode #certifications h2 {
-    color: #f0f6fc;
-  }
-  body.dark-mode .cert-card {
-    background-color: #161b22;
-    box-shadow: 0 8px 20px rgba(240, 246, 252, 0.05);
-    border: 1px solid #30363d;
-  }
-  body.dark-mode .cert-card h3 {
-    color: #58a6ff;
-  }
-  body.dark-mode .cert-card p {
-    color: #c9d1d9;
-  }
-  body.dark-mode .cert-card ul li {
-    color: #c9d1d9;
-    background-color: #1e1e1e;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
-  }
-  body.dark-mode .cert-card ul li::before {
-    color: #3fb950;
-  }
-  body.dark-mode .cert-card ul li:hover {
-    background-color: #172941;
-    transform: translateY(-4px);
-  }
-  body.dark-mode .certificate .btn {
-    background-color: #238636;
-    color: #f0f6fc;
-    border: 1px solid #2ea043;
-  }
-  body.dark-mode .certificate .btn:hover {
-    background-color: #125c1f;
-  }
-  body.dark-mode .badge-container {
-    background-color: #f5f5f5;
-    border: 1px solid #444;
-    color: #f0f6fc;
-    box-shadow: 0 4px 12px rgba(255, 255, 255, 0.05);
+  .cert-card {
+    padding: 20px;
   }
 
-/* Services Section */
-  #services {
-    background-color: #f7f9fc;
-    color: #000000;
-    padding: 60px 20px;
-    text-align: center;
-  }
-  #services h2 {
-    font-size: 2.2rem;
-    margin-bottom: 40px;
-    color: #222;
-  }
-  .services-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 30px;
-    max-width: 1100px;
-    margin: 0 auto;
-  }
-  .service-card {
-    background-color: #ffffff;
-    border-radius: 15px;
-    padding: 25px 20px;
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.08);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-  }
-  .service-card h3 {
-    font-size: 1.25rem;
-    color: #333;
-    margin-bottom: 10px;
-  }
-  .service-card p {
-    color: #555;
-    font-size: 0.95rem;
-    line-height: 1.5;
-  }
-  .service-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.12);
+  .cert-card h3 {
+    font-size: 1.2rem;
   }
 
-/* Dark Mode Services Section */
-  body.dark-mode #services {
-    background-color: #0d1117;
-    color: #f0f6fc;
-  }
-  body.dark-mode #services h2 {
-    color: #f0f6fc;
-  }
-  body.dark-mode .service-card {
-    background-color: #161b22;
-    border: 1px solid #30363d;
-    box-shadow: 0 6px 12px rgba(240, 246, 252, 0.05);
-  }
-  body.dark-mode .service-card h3 {
-    color: #58a6ff;
-  }
-  body.dark-mode .service-card p {
-    color: #c9d1d9;
-  }
-  body.dark-mode .service-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 12px 24px rgba(240, 246, 252, 0.08);
-  }
-
-/* Achievements Section */
-  #achievements {
-    padding: 60px 20px;
-    background-color: #f7f9fc;
-    color: #000000;
-  }
-  #achievements h2 {
-    text-align: center;
-    font-size: 2rem;
-    margin-bottom: 40px;
-    color: #222;
-  }
-  .achievements-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 25px;
-    max-width: 1100px;
-    margin: 0 auto;
-  }
-  .achievement-card {
-    background-color: #ffffff;
-    border-radius: 15px;
-    padding: 20px 25px;
-    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
-    transition: transform 0.3s, box-shadow 0.3s;
-  }
-  .achievement-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
-  }
-  .achievement-card h3 {
-    font-size: 1.25rem;
-    margin-bottom: 10px;
-    color: #333;
-  }
-  .achievement-card p {
-    font-size: 0.95rem;
-    line-height: 1.5;
-    color: #555;
-    margin-bottom: 8px;
-  }
-
-/* Dark Mode Achievements Section */
-  body.dark-mode #achievements {
-    background-color: #0d1117;
-    color: #f0f6fc;
-  }
-  body.dark-mode #achievements h2 {
-    color: #f0f6fc;
-  }
-  body.dark-mode .achievement-card {
-    background-color: #161b22;
-    border: 1px solid #30363d;
-    box-shadow: 0 4px 16px rgba(255, 255, 255, 0.05);
-  }
-  body.dark-mode .achievement-card h3 {
-    color: #58a6ff;
-  }
-  body.dark-mode .achievement-card p {
-    color: #c9d1d9;
-  }
-
-/* Testimonials Section */
-  #testimonials {
-    padding: 60px 20px;
-    background-color: #f7f9fc;
-    color: #000000;
-  }
-  #testimonials h2 {
-    text-align: center;
-    font-size: 2rem;
-    color: #222;
-    margin-bottom: 40px;
-  }
-  .testimonials-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 25px;
-    max-width: 1100px;
-    margin: 0 auto;
-  }
-  .testimonial-card {
-    background-color: #ffffff;
-    border-radius: 12px;
-    padding: 25px 20px;
-    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s;
-  }
-  .testimonial-card:hover {
-    transform: translateY(-10px);
-  }
-  .testimonial-text {
-    font-size: 1rem;
-    color: #555;
-    line-height: 1.6;
-    margin-bottom: 15px;
-    font-style: italic;
-  }
-  .testimonial-author {
-    font-size: 0.95rem;
-    font-weight: bold;
-    color: #333;
-  }
-
-/* Dark Mode Testimonials Section */
-  body.dark-mode #testimonials {
-    background-color: #0d1117;
-    color: #f0f6fc;
-  }
-  body.dark-mode #testimonials h2 {
-    color: #f0f6fc;
-  }
-  body.dark-mode .testimonial-card {
-    background-color: #161b22;
-    border: 1px solid #30363d;
-    box-shadow: 0 4px 14px rgba(255, 255, 255, 0.05);
-  }
-  body.dark-mode .testimonial-text {
-    color: #c9d1d9;
-  }
-  body.dark-mode .testimonial-author {
-    color: #58a6ff;
-  }
-
-/* Contact Section */
-  #contact {
-    padding: 60px 20px;
-    background-color: #f7f9fc;
-    color: #000000;
-    text-align: center;
-  }
-  #contact h2 {
-    font-size: 2rem;
-    margin-bottom: 15px;
-  }
-  #contact p {
-    font-size: 1.1rem;
-    margin-bottom: 25px;
-    line-height: 1.6;
-    max-width: 800px;
-    margin-left: auto;
-    margin-right: auto;
-  }
-  .form-container {
-    max-width: 800px;
-    margin: 0 auto 40px;
-    border-radius: 12px;
-    overflow: hidden;
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.05);
-  }
-  .contact-info {
-    margin-top: 30px;
-  }
-  .contact-info p {
-    font-size: 1rem;
-    margin: 8px 0;
-  }
-  .contact-info a {
-    color: #007bff;
-    text-decoration: none;
-  }
-  .contact-info a:hover {
-    text-decoration: underline;
-  }
-  .social-link {
-    display: inline-block;
-    margin: 0 10px;
-    font-size: 1.1rem;
-    text-decoration: none;
-    color: #333;
-    transition: color 0.3s;
-  }
-  .social-link:hover {
-    color: #0056b3;
-  }
-  .social-links { 
-    display: block;
-    gap: 12px;
-    margin-top: 20px;
-    justify-content: center;
-  }
-  .social-link {
-    display: inline-block;
-    padding: 10px;
-    border-radius: 50%;
-    background-color: #f2f2f2;
-    border: 1.5px solid #ccc;
-    transition: background-color 0.3s ease, transform 0.2s ease, border-color 0.3s ease;
-  }
-  .social-icon {
-    width: 24px;
-    height: 24px;
-    display: block;
-    transition: filter 0.3s ease;
-  }
-  .email-icon {
-    width: 24px;
-    height: 24px;
-    display: block;
-    transition: filter 0.3s ease;
-  }
-  .social-link:hover {
-    background-color: #e6f0ff;
-    border-color: #007bff;
-    transform: scale(1.4);
-  }
-
-/* Dark Mode Contact Section*/
-  body.dark-mode #contact {
-    background-color: #0d1117;
-    color: #f0f6fc;
-  }
-  body.dark-mode .contact-info a,
-  body.dark-mode .social-link {
-    color: #58a6ff;
-  }
-  body.dark-mode .social-link:hover {
-    color: #1f6feb;
-  }
-  body.dark-mode .form-container {
-    box-shadow: 0 6px 20px rgba(255, 255, 255, 0.05);
-  }
-  body.dark-mode .social-link {
-    background-color: #1a1a1a;
-    border-color: #555;
-  }
-  body.dark-mode .social-icon {
-    filter: invert(1);
-  }
-  body.dark-mode .social-link:hover {
-    background-color: #333;
-    border-color: #4da3ff;
-  }
-  body.dark-mode .email-icon {
-    filter: invert(1); 
-  }
-
-/* Footer Section */
-  .footer {
-    background-color: #f7f9fc;
-    color: #000000;
-    padding: 40px 20px;
-    text-align: center;
-    font-size: 0.95rem;
-  }
-  .footer-container {
-    max-width: 1100px;
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
-    align-items: center;
-  }
-  .footer-nav {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 12px;
-  }
-  .footer-nav a {
-    color: #333;
-    text-decoration: none;
-    font-weight: 500;
-    transition: color 0.3s;
-  }
-  .footer-nav a:hover {
-    color: #0077b6;
-    text-decoration: underline;
-  }
-
-/* Responsive Styling */
-@media (max-width: 768px) {
-  .footer {
-    padding: 20px 15px 60px;
+  .cert-card p {
     font-size: 0.9rem;
-    text-align: center;
   }
-  .footer-container {
-    flex-direction: column;
-    align-items: center;
-    gap: 12px;
-  }
-  .footer-nav a {
-    margin: 8px 6px;
-    font-size: 0.95rem;
+
+  .cert-card ul li {
+    font-size: 14px;
   }
 }
 
-/* Back to Top Button */
+/* =========================
+   Dark Mode – Certifications
+   ========================= */
+body.dark-mode #certifications {
+  background-color: #0d1117;
+  color: #f0f6fc;
+}
+
+body.dark-mode #certifications h2 {
+  color: #f0f6fc;
+}
+
+body.dark-mode .cert-card {
+  background-color: #161b22;
+  border: 1px solid #30363d;
+  box-shadow: 0 8px 20px rgba(240, 246, 252, 0.05);
+}
+
+body.dark-mode .cert-card h3 {
+  color: #00ff7f;
+}
+
+body.dark-mode .cert-card p {
+  color: #c9d1d9;
+}
+
+body.dark-mode .cert-card ul li {
+  background-color: #0f172a;
+  color: #c9d1d9;
+}
+
+body.dark-mode .cert-card ul li:hover {
+  background-color: rgba(0,255,127,0.08);
+}
+
+body.dark-mode .certificate .btn {
+  background-color: #0f2e2b;
+  color: #00ff7f;
+  border: 1px solid #00ff7f;
+}
+
+body.dark-mode .certificate .btn:hover {
+  background-color: #083d32;
+}
+
+body.dark-mode .badge-container {
+  background-color: #f8fafc;   /* light neutral */
+  border: 1px solid #30363d;
+  color: #0f172a;
+}
+
+body.dark-mode .badge-container {
+  box-shadow: 0 4px 12px rgba(0, 255, 127, 0.08);
+}
+
+
+/* =========================
+   Services Section
+   ========================= */
+#services {
+  background-color: #f7f9fc;
+  color: #000000;
+  padding: 60px 20px;
+  text-align: center;
+}
+
+#services h2 {
+  font-size: 2.2rem;
+  margin-bottom: 40px;
+  color: #222;
+}
+
+/* =========================
+   Services Grid
+   ========================= */
+.services-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* =========================
+   Service Card
+   ========================= */
+.service-card {
+  background-color: #ffffff;
+  border-radius: 12px;
+  padding: 25px 20px;
+
+  border-top: 3px solid #38b2ac;
+
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.08);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.service-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.12);
+}
+
+.service-card h3 {
+  font-size: 1.25rem;
+  color: #38b2ac;
+  margin-bottom: 10px;
+}
+
+.service-card p {
+  color: #555;
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+/* =========================
+   Dark Mode – Services
+   ========================= */
+body.dark-mode #services {
+  background-color: #0d1117;
+  color: #f0f6fc;
+}
+
+body.dark-mode #services h2 {
+  color: #f0f6fc;
+}
+
+body.dark-mode .service-card {
+  background-color: #161b22;
+  border-top-color: #00ff7f;
+  border: 1px solid #30363d;
+  box-shadow: 0 6px 12px rgba(240, 246, 252, 0.05);
+}
+
+body.dark-mode .service-card h3 {
+  color: #00ff7f;
+}
+
+body.dark-mode .service-card p {
+  color: #c9d1d9;
+}
+
+body.dark-mode .service-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 24px rgba(240, 246, 252, 0.08);
+}
+
+
+/* =========================
+   Achievements Section
+   ========================= */
+#achievements {
+  padding: 60px 20px;
+  background-color: #f7f9fc;
+  color: #000000;
+}
+
+#achievements h2 {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 40px;
+  color: #222;
+}
+
+/* =========================
+   Achievements Grid
+   ========================= */
+.achievements-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 25px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* =========================
+   Achievement Card
+   ========================= */
+.achievement-card {
+  background-color: #ffffff;
+  border-radius: 12px;
+  padding: 20px 25px;
+
+  border-top: 3px solid #38b2ac;
+
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.achievement-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+}
+
+.achievement-card h3 {
+  font-size: 1.25rem;
+  margin-bottom: 10px;
+  color: #38b2ac;
+}
+
+.achievement-card p {
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: #555;
+  margin-bottom: 8px;
+}
+
+/* =========================
+   Dark Mode – Achievements
+   ========================= */
+body.dark-mode #achievements {
+  background-color: #0d1117;
+  color: #f0f6fc;
+}
+
+body.dark-mode #achievements h2 {
+  color: #f0f6fc;
+}
+
+body.dark-mode .achievement-card {
+  background-color: #161b22;
+  border-top-color: #00ff7f;
+  border: 1px solid #30363d;
+  box-shadow: 0 4px 16px rgba(240, 246, 252, 0.05);
+}
+
+body.dark-mode .achievement-card h3 {
+  color: #00ff7f;
+}
+
+body.dark-mode .achievement-card p {
+  color: #c9d1d9;
+}
+
+body.dark-mode .achievement-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 8px 24px rgba(240, 246, 252, 0.08);
+}
+
+
+/* =========================
+   Testimonials Section
+   ========================= */
+#testimonials {
+  padding: 60px 20px;
+  background-color: #f7f9fc;
+  color: #000000;
+}
+
+#testimonials h2 {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 40px;
+  color: #222;
+}
+
+/* =========================
+   Testimonials Grid
+   ========================= */
+.testimonials-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 25px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* =========================
+   Testimonial Card
+   ========================= */
+.testimonial-card {
+  background-color: #ffffff;
+  border-radius: 12px;
+  padding: 25px 20px;
+
+  border-top: 3px solid #38b2ac;
+
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.testimonial-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+}
+
+.testimonial-text {
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: 15px;
+  font-style: italic;
+  color: #555;
+}
+
+.testimonial-author {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #38b2ac;
+}
+
+/* =========================
+   Dark Mode – Testimonials
+   ========================= */
+body.dark-mode #testimonials {
+  background-color: #0d1117;
+  color: #f0f6fc;
+}
+
+body.dark-mode #testimonials h2 {
+  color: #f0f6fc;
+}
+
+body.dark-mode .testimonial-card {
+  background-color: #161b22;
+  border-top-color: #00ff7f;
+  border: 1px solid #30363d;
+  box-shadow: 0 4px 14px rgba(240, 246, 252, 0.05);
+}
+
+body.dark-mode .testimonial-text {
+  color: #c9d1d9;
+}
+
+body.dark-mode .testimonial-author {
+  color: #00ff7f;
+}
+
+body.dark-mode .testimonial-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 8px 20px rgba(240, 246, 252, 0.08);
+}
+
+
+/* =========================
+   Contact Section
+   ========================= */
+#contact {
+  padding: 60px 20px;
+  background-color: #f7f9fc;
+  color: #000000;
+  text-align: center;
+}
+
+#contact h2 {
+  font-size: 2rem;
+  margin-bottom: 15px;
+  color: #222;
+}
+
+#contact p {
+  font-size: 1.05rem;
+  margin-bottom: 25px;
+  line-height: 1.6;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* =========================
+   Form Container
+   ========================= */
+.form-container {
+  max-width: 800px;
+  margin: 0 auto 40px;
+  border-radius: 12px;
+  overflow: hidden;
+  background-color: #ffffff;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.05);
+}
+
+/* =========================
+   Contact Info
+   ========================= */
+.contact-info {
+  margin-top: 30px;
+}
+
+.contact-info p {
+  font-size: 1rem;
+  margin: 8px 0;
+}
+
+.contact-info a {
+  color: #38b2ac;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.contact-info a:hover {
+  text-decoration: underline;
+}
+
+/* =========================
+   Social Links
+   ========================= */
+.social-links {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 20px;
+}
+
+.social-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 44px;
+  height: 44px;
+
+  border-radius: 50%;
+  background-color: #ffffff;
+  border: 1.5px solid #38b2ac;
+
+  transition: background-color 0.25s ease,
+              transform 0.2s ease,
+              box-shadow 0.25s ease;
+}
+
+.social-link:hover {
+  background-color: #e6fffa;
+  transform: scale(1.15);
+  box-shadow: 0 0 10px rgba(56, 178, 172, 0.35);
+}
+
+.social-icon,
+.email-icon {
+  width: 22px;
+  height: 22px;
+  display: block;
+}
+
+/* =========================
+   Dark Mode – Contact
+   ========================= */
+body.dark-mode #contact {
+  background-color: #0d1117;
+  color: #f0f6fc;
+}
+
+body.dark-mode #contact h2 {
+  color: #f0f6fc;
+}
+
+body.dark-mode .form-container {
+  background-color: #161b22;
+  box-shadow: 0 6px 20px rgba(240, 246, 252, 0.05);
+  border: 1px solid #30363d;
+}
+
+body.dark-mode .contact-info a {
+  color: #00ff7f;
+}
+
+body.dark-mode .social-link {
+  background-color: #0f172a;
+  border-color: #00ff7f;
+}
+
+body.dark-mode .social-link:hover {
+  background-color: rgba(0, 255, 127, 0.08);
+  box-shadow: 0 0 14px rgba(0, 255, 127, 0.35);
+}
+
+body.dark-mode .social-icon,
+body.dark-mode .email-icon {
+  filter: invert(1);
+}
+
+
+/* =========================
+   Footer Section
+   ========================= */
+.footer {
+  background-color: #f7f9fc;
+  color: #000000;
+  padding: 40px 20px;
+  text-align: center;
+  font-size: 0.95rem;
+}
+
+.footer-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  align-items: center;
+}
+
+.footer-nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+}
+
+.footer-nav a {
+  color: #333;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.25s ease;
+}
+
+.footer-nav a:hover {
+  color: #38b2ac;
+  text-decoration: underline;
+}
+
+/* =========================
+   Back To Top Button
+   ========================= */
 #backToTopBtn {
   position: fixed;
   bottom: 30px;
@@ -1928,13 +2044,14 @@ body.dark-mode .project-card .btnn:hover {
   padding: 6px;
   font-size: 20px;
 
-  /* LIGHT MODE */
-  background-color: #e6fffa;  
-  color: #065f46;              
+  background-color: #e6fffa;
+  color: #065f46;
   border: 1px solid #38b2ac;
-  border-radius: 5px;
+  border-radius: 6px;
+
   cursor: pointer;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+
   opacity: 0;
   pointer-events: none;
   transition:
@@ -1948,18 +2065,35 @@ body.dark-mode .project-card .btnn:hover {
   pointer-events: auto;
 }
 
-/* Hover – Light mode */
 #backToTopBtn:hover {
   background-color: #38b2ac;
   color: #ffffff;
   transform: translateY(-2px);
 }
 
-body.dark-mode #backToTopBtn {
-  background-color: #0f2e2b;   
-  color: #00ff7f;              
-  border-color: #00ff7f;
+/* =========================
+   Dark Mode – Footer
+   ========================= */
+body.dark-mode .footer {
+  background-color: #0d1117;
+  color: #f0f6fc;
+}
 
+body.dark-mode .footer-nav a {
+  color: #c9d1d9;
+}
+
+body.dark-mode .footer-nav a:hover {
+  color: #00ff7f;
+}
+
+/* =========================
+   Dark Mode – Back To Top
+   ========================= */
+body.dark-mode #backToTopBtn {
+  background-color: #0f2e2b;
+  color: #00ff7f;
+  border-color: #00ff7f;
   box-shadow: 0 2px 10px rgba(0, 255, 127, 0.25);
 }
 
@@ -1967,7 +2101,15 @@ body.dark-mode #backToTopBtn:hover {
   background-color: #083d32;
 }
 
+/* =========================
+   Responsive Adjustments
+   ========================= */
 @media (max-width: 768px) {
+  .footer {
+    padding: 20px 15px 60px;
+    font-size: 0.9rem;
+  }
+
   #backToTopBtn {
     bottom: 20px;
     right: 12px;
@@ -1975,17 +2117,5 @@ body.dark-mode #backToTopBtn:hover {
     font-size: 14px;
   }
 }
-
-/* Dark mode Footer Section */
-  body.dark-mode .footer {
-    background-color: #0d1117;
-    color: #f0f6fc;
-  }
-  body.dark-mode .footer-nav a {
-    color: #c9d1d9;
-  }
-  body.dark-mode .footer-nav a:hover {
-    color: #58a6ff;
-  }
 
 
