@@ -69,11 +69,20 @@ nav {
    Logo
    ========================= */
 .logo {
-  font-weight: 800;
+  display: flex;
+  align-items: center;
+  gap: 8px;  
   font-size: 1.3rem;
   letter-spacing: 0.6px;
-  text-decoration: none;
+  font-weight: 800;
   color: #38b2ac;
+  text-decoration: none;
+}
+
+.logo img {
+  width: 28px;
+  height: 28px;
+  object-fit: contain;
 }
 
 /* =========================
@@ -104,7 +113,7 @@ nav {
   text-decoration: none;
   color: inherit;
 
-  font-weight: 600;
+  font-weight: 800;
   font-size: 1rem;
   position: relative;
 
