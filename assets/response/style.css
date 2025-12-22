@@ -81,8 +81,8 @@ nav {
 
   /* Inline SVG icon */
   .logo-icon {
-    width: 28px;
-    height: 28px;
+    width: 30px;
+    height: 30px;
     transition: transform 0.2s ease;
   }
 
