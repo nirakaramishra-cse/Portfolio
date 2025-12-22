@@ -72,7 +72,7 @@ nav {
   display: flex;
   align-items: center;
   gap: 8px;  
-  font-size: 1.3rem;
+  font-size: 1.1rem;
   letter-spacing: 0.6px;
   font-weight: 800;
   color: #38b2ac;
@@ -251,6 +251,10 @@ body.dark-mode .bttn:hover {
   .nav-links.open {
     display: flex;
   }
+
+.logo {
+  margin-right: 0;
+}
 
   body.dark-mode .nav-links {
     background: linear-gradient(
