@@ -293,51 +293,51 @@ body.dark-mode .bttn:hover {
 
 
 /* =========================
-   Hero Wrapper
-   ========================= */
+   HERO WRAPPER
+========================= */
 .hero-wrapper {
-  background-color: #f7f9fc;
+  width: 100%;
   padding: 1rem;
+  background-color: #f7f9fc;
+  box-sizing: border-box;
 }
 
 /* =========================
-   Hero Section
-   ========================= */
+   HERO SECTION
+========================= */
 #hero {
   position: relative;
-  overflow: hidden;
+  width: 100%;
+  min-height: 80vh;
 
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
 
-  min-height: 80vh;
   padding: 2.5rem;
-
   border-radius: 16px;
-  box-sizing: border-box;
+  overflow: hidden;
 
-  color: #e6fffa;
   background: linear-gradient(
     rgba(0, 0, 0, 0.65),
     rgba(0, 0, 0, 0.65)
   );
 
+  color: #e6fffa;
   box-shadow: 0 12px 30px rgba(0, 0, 0, 0.05);
 }
 
 /* =========================
-   Background Image
-   ========================= */
+   BACKGROUND IMAGE
+========================= */
 .hero-img {
   position: absolute;
   inset: 0;
-
   width: 100%;
   height: 100%;
-  object-fit: cover;
 
+  object-fit: cover;
   opacity: 0.6;
   z-index: 0;
 
@@ -345,46 +345,54 @@ body.dark-mode .bttn:hover {
 }
 
 @keyframes zoomLoop {
-  from {
-    transform: scale(1);
-  }
-  to {
-    transform: scale(1.08);
-  }
+  from { transform: scale(1); }
+  to   { transform: scale(1.08); }
 }
 
 /* =========================
-   Matrix Layer
-   ========================= */
-.matrix {
+   BINARY RAIN CANVAS
+========================= */
+#binaryRain {
   position: absolute;
   inset: 0;
+  width: 100%;
+  height: 100%;
+
   z-index: 1;
+  pointer-events: none;
+  opacity: 0.35;
+}
+
+/* Hide canvas in light mode */
+body:not(.dark-mode) #binaryRain {
+  display: none;
 }
 
 /* =========================
-   Hero Content
-   ========================= */
+   HERO CONTENT
+========================= */
 .hero-content {
   position: relative;
   z-index: 2;
+
   max-width: 820px;
+  width: 100%;
+
+  margin: 0 auto;
+  padding: 0 1rem;
 }
 
-/* =========================
-   Hero Text
-   ========================= */
 #hero h1 {
   font-size: 3rem;
   margin-bottom: 1rem;
-  font-family: 'Courier New', monospace;
+  font-family: "Courier New", monospace;
   color: #ffffff;
 }
 
 #hero p {
   font-size: 1.25rem;
-  margin: 0 auto 1.8rem;
-  max-width: 760px;
+  margin-bottom: 1.8rem;
+  line-height: 1.6;
 
   color: #b2f5ea;
   font-weight: 600;
@@ -392,11 +400,10 @@ body.dark-mode .bttn:hover {
 }
 
 /* =========================
-   Hero Button
-   ========================= */
+   HERO BUTTON
+========================= */
 #hero .btnn {
   display: inline-block;
-  margin-top: 2rem;
   padding: 0.8rem 1.5rem;
 
   background-color: #38b2ac;
@@ -407,9 +414,7 @@ body.dark-mode .bttn:hover {
   border-radius: 8px;
   border: 1.5px solid #38b2ac;
 
-  transition: background-color 0.25s ease,
-              color 0.25s ease,
-              transform 0.2s ease;
+  transition: all 0.25s ease;
 }
 
 #hero .btnn:hover {
@@ -419,8 +424,8 @@ body.dark-mode .bttn:hover {
 }
 
 /* =========================
-   Dark Mode
-   ========================= */
+   DARK MODE
+========================= */
 body.dark-mode .hero-wrapper {
   background-color: #0d1117;
 }
@@ -430,7 +435,6 @@ body.dark-mode #hero {
     rgba(0, 0, 0, 0.55),
     rgba(0, 0, 0, 0.55)
   );
-  color: #f0f6fc;
 }
 
 body.dark-mode #hero h1 {
@@ -450,17 +454,12 @@ body.dark-mode #hero .btnn {
 
 body.dark-mode #hero .btnn:hover {
   background-color: #083d32;
-  transform: translateY(-2px);
 }
 
 /* =========================
-   Responsive Styling
-   ========================= */
+   RESPONSIVE
+========================= */
 @media (max-width: 768px) {
-  .hero-wrapper {
-    padding: 0.5rem;
-  }
-
   #hero {
     min-height: auto;
     padding: 2rem 1.5rem;
@@ -472,52 +471,23 @@ body.dark-mode #hero .btnn:hover {
 
   #hero p {
     font-size: 1rem;
-    line-height: 1.5;
   }
 
   #hero .btnn {
-    margin-top: 1.5rem;
     padding: 0.7rem 1.2rem;
-    font-size: 1rem;
+  }
+
+  #binaryRain {
+    opacity: 0.25;
   }
 }
 
-/* =========================
-   Binary Rain Canvas
-   ========================= */
-
-/* Canvas sits above background image but below hero content */
+/* Respect reduced motion */
+@media (prefers-reduced-motion: reduce) {
   #binaryRain {
-    position: absolute;
-    inset: 0;
-    width: 100%;
-    height: 100%;
-
-    z-index: 1;              /* hero-img: 0 | binaryRain: 1 | hero-content: 2 */
-    pointer-events: none;   /* do not block clicks */
-
-    opacity: 0.35;          /* subtle by default */
-    transition: opacity 0.4s ease;
-  }
-
-  /* Only enable binary rain in dark mode */
-  body:not(.dark-mode) #binaryRain {
     display: none;
   }
-
-  /* Mobile: reduce intensity further */
-  @media (max-width: 768px) {
-    #binaryRain {
-      opacity: 0.25;
-    }
-  }
-
-  /* Respect reduced motion preferences */
-  @media (prefers-reduced-motion: reduce) {
-    #binaryRain {
-      display: none;
-    }
-  }
+}
 
 
  /* =========================
