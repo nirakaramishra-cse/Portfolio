@@ -320,8 +320,8 @@ body.dark-mode .bttn:hover {
   overflow: hidden;
 
   background: linear-gradient(
-    rgba(0, 0, 0, 0.65),
-    rgba(0, 0, 0, 0.65)
+    rgba(0, 0, 0, 0.72),
+    rgba(0, 0, 0, 0.72)
   );
 
   color: #e6fffa;
@@ -338,9 +338,10 @@ body.dark-mode .bttn:hover {
   height: 100%;
 
   object-fit: cover;
-  opacity: 0.6;
+  opacity: 0.55;
   z-index: 0;
 
+  filter: saturate(1.1) contrast(1.05);
   animation: zoomLoop 10s ease-in-out infinite alternate;
 }
 
@@ -432,8 +433,8 @@ body.dark-mode .hero-wrapper {
 
 body.dark-mode #hero {
   background: linear-gradient(
-    rgba(0, 0, 0, 0.55),
-    rgba(0, 0, 0, 0.55)
+    rgba(0, 0, 0, 0.62),
+    rgba(0, 0, 0, 0.62)
   );
 }
 
@@ -463,6 +464,11 @@ body.dark-mode #hero .btnn:hover {
   #hero {
     min-height: auto;
     padding: 2rem 1.5rem;
+  }
+
+  .hero-img {
+    opacity: 0.45;
+    animation: none;
   }
 
   #hero h1 {
