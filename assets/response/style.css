@@ -53,15 +53,14 @@ canvas {
   position: absolute;
   bottom: 125%;
   left: 50%;
-  transform: translateX(-50%) translateY(6px);
+  transform: translateX(-50%);
 
   padding: 6px 12px;
   font-size: 0.75rem;
   font-weight: 500;
   line-height: 1.4;
 
-  max-width: 200px;
-  white-space: nowrap;
+  max-width: 240px;
   text-align: center;
   white-space: normal;
 
@@ -69,10 +68,7 @@ canvas {
   opacity: 0;
   pointer-events: none;
 
-  transition:
-    opacity 0.18s ease 0.25s,
-    transform 0.18s ease 0.25s;
-
+  transition: opacity 0.18s ease 0.25s;
   z-index: 1000;
 }
 
@@ -80,9 +76,8 @@ canvas {
 [data-tooltip]::before {
   content: "";
   position: absolute;
-  bottom: calc(125% - 6px);
+  bottom: calc(125% - 4px);
   left: 50%;
-
   transform: translateX(-50%) rotate(45deg);
 
   width: 8px;
@@ -90,12 +85,9 @@ canvas {
 
   opacity: 0;
   pointer-events: none;
-
   transition: opacity 0.18s ease 0.25s;
   z-index: 999;
 }
-
-
 
 /* =========================
    Light Mode
@@ -135,7 +127,6 @@ body.dark-mode [data-tooltip]::before {
 [data-tooltip]:hover::after,
 [data-tooltip]:hover::before {
   opacity: 1;
-  transform: translateX(-50%) translateY(-4px);
 }
 
 /* =========================
@@ -157,6 +148,7 @@ body.dark-mode [data-tooltip]::before {
     display: none;
   }
 }
+
 
 
 /* =========================
