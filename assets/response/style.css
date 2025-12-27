@@ -81,11 +81,11 @@ canvas {
   position: absolute;
   bottom: 115%;
   left: 50%;
-  transform: translateX(-50%);
 
   width: 8px;
   height: 8px;
-  rotate: 45deg;
+
+  transform: translateX(-50%) rotate(45deg);
 
   opacity: 0;
   pointer-events: none;
@@ -96,6 +96,12 @@ canvas {
 
   z-index: 999;
 }
+
+  [data-tooltip]:hover::before {
+  opacity: 1;
+  transform: translateX(-50%) translateY(-4px) rotate(45deg);
+}
+
 
 /* =========================
    Light Mode
@@ -872,7 +878,6 @@ body.dark-mode #hero .btnn:hover {
   font-size: 1rem;
   font-weight: 700;
   letter-spacing: 2px;
-  text-transform: uppercase;
   text-decoration: none;
 
   color: #065f46;
