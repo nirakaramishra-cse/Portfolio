@@ -60,7 +60,8 @@ canvas {
   font-weight: 500;
   line-height: 1.4;
 
-  max-width: 240px;
+  max-width: 200px;
+  white-space: nowrap;
   text-align: center;
   white-space: normal;
 
@@ -97,10 +98,6 @@ canvas {
   z-index: 999;
 }
 
-  [data-tooltip]:hover::before {
-  opacity: 1;
-  transform: translateX(-50%) translateY(-4px) rotate(45deg);
-}
 
 
 /* =========================
@@ -138,7 +135,6 @@ body.dark-mode [data-tooltip]::before {
 /* =========================
    Show Tooltip
    ========================= */
-[data-tooltip]:hover::after,
 [data-tooltip]:hover::before {
   opacity: 1;
   transform: translateX(-50%) translateY(-4px);
