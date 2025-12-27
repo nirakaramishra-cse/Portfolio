@@ -80,21 +80,18 @@ canvas {
 [data-tooltip]::before {
   content: "";
   position: absolute;
-  bottom: 115%;
+  bottom: calc(125% - 6px);
   left: 50%;
+
+  transform: translateX(-50%) rotate(45deg);
 
   width: 8px;
   height: 8px;
 
-  transform: translateX(-50%) rotate(45deg);
-
   opacity: 0;
   pointer-events: none;
 
-  transition:
-    opacity 0.18s ease 0.25s,
-    transform 0.18s ease 0.25s;
-
+  transition: opacity 0.18s ease 0.25s;
   z-index: 999;
 }
 
@@ -138,7 +135,6 @@ body.dark-mode [data-tooltip]::before {
 [data-tooltip]:hover::after,
 [data-tooltip]:hover::before {
   opacity: 1;
-  transform: translateX(-50%) translateY(-4px);
 }
 
 /* =========================
