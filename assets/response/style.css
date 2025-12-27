@@ -135,6 +135,7 @@ body.dark-mode [data-tooltip]::before {
 /* =========================
    Show Tooltip
    ========================= */
+[data-tooltip]:hover::after,
 [data-tooltip]:hover::before {
   opacity: 1;
   transform: translateX(-50%) translateY(-4px);
