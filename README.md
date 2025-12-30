@@ -9,7 +9,9 @@ Built with HTML, CSS, and JavaScript, it reflects my commitment to creating secu
 
 ## 🌐 Live Website
 
-👉 [Visit My Portfolio](https://nirakaramishra-cse.github.io/Portfolio/)
+
+👉 <a href="https://nirakaramishra-cse.github.io/Portfolio/" target="_blank">Visit My Portfolio</a>
+
 
 ---
 
