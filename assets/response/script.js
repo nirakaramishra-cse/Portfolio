@@ -1,27 +1,36 @@
 
+
 /* =========================
    Mobile Navigation Toggle
    ========================= */
-function toggleMenu(icon) {
+
+document.addEventListener("DOMContentLoaded", () => {
+  const menuToggle = document.getElementById("menuIcon");
   const navLinks = document.getElementById("navLinks");
-  if (!navLinks) return;
 
-  navLinks.classList.toggle("open");
-  icon.textContent = navLinks.classList.contains("open") ? "✖" : "☰";
-}
+  if (!menuToggle || !navLinks) return;
 
-/* Auto-close menu when clicking a nav link */
-document.querySelectorAll("#navLinks a").forEach(link => {
-  link.addEventListener("click", () => {
-    const navLinks = document.getElementById("navLinks");
-    const menuBtn = document.getElementById("menuIcon");
+  // Toggle menu open / close
+  menuToggle.addEventListener("click", () => {
+    const isOpen = navLinks.classList.toggle("open");
+    menuToggle.classList.toggle("open", isOpen);
 
-    if (navLinks?.classList.contains("open")) {
+    // Accessibility sync
+    menuToggle.setAttribute("aria-expanded", isOpen);
+  });
+
+  // Auto-close menu when a nav link is clicked
+  navLinks.querySelectorAll("a").forEach(link => {
+    link.addEventListener("click", () => {
       navLinks.classList.remove("open");
-      if (menuBtn) menuBtn.textContent = "☰";
-    }
+      menuToggle.classList.remove("open");
+
+      // Accessibility sync
+      menuToggle.setAttribute("aria-expanded", "false");
+    });
   });
 });
+
 
 
 /* =========================

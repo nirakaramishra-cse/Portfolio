@@ -347,22 +347,126 @@ body.dark-mode .bttn:hover {
   box-shadow: 0 0 12px rgba(0, 255, 127, 0.45);
 }
 
+
+/* =========================
+   Mobile Menu Toggle
+   ========================= */
+
+.menu-toggle {
+  width: 42px;
+  height: 42px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+
+  background-color: #e6fffa;
+  border: 1.5px solid #38b2ac;
+  border-radius: 10px;
+
+  cursor: pointer;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+
+  transition:
+    background-color 0.25s ease,
+    border-color 0.25s ease,
+    transform 0.15s ease;
+}
+
+/* Tap feedback */
+.menu-toggle:active {
+  transform: scale(0.96);
+}
+
+/* Keyboard focus */
+.menu-toggle:focus-visible {
+  outline: 2px solid #38b2ac;
+  outline-offset: 2px;
+}
+
+/* =========================
+   Hamburger Lines
+   ========================= */
+
+.menu-toggle span {
+  width: 22px;
+  height: 2.5px;
+
+  background-color: #065f46;
+  border-radius: 2px;
+
+  transition:
+    transform 0.28s cubic-bezier(0.4, 0, 0.2, 1),
+    opacity 0.25s ease,
+    background-color 0.25s ease;
+}
+
+/* =========================
+   Open State (X icon)
+   ========================= */
+
+.menu-toggle.open span:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+
+.menu-toggle.open span:nth-child(2) {
+  opacity: 0;
+}
+
+.menu-toggle.open span:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+/* =========================
+   ARIA State Styling
+   ========================= */
+
+.menu-toggle[aria-expanded="true"] {
+  background-color: #38b2ac;
+}
+
+/* =========================
+   Dark Mode
+   ========================= */
+
+body.dark-mode .menu-toggle {
+  background-color: #0f2e2b;
+  border-color: #00ff7f;
+}
+
+body.dark-mode .menu-toggle span {
+  background-color: #00ff7f;
+}
+
+body.dark-mode .menu-toggle:focus-visible {
+  outline-color: #00ff7f;
+}
+
+body.dark-mode .menu-toggle[aria-expanded="true"] {
+  background-color: #083d32;
+}
+
+/* =========================
+   Desktop – Hide Toggle
+   ========================= */
+
+@media (min-width: 768px) {
+  .menu-toggle {
+    display: none;
+  }
+}
+
+
 /* =========================
    Mobile Navigation
    ========================= */
-.menu-toggle {
-  display: none;
-  font-size: 1.8rem;
-  cursor: pointer;
-}
 
 @media (max-width: 768px) {
   nav {
     padding: 0.5rem 1rem;
-  }
-
-  .menu-toggle {
-    display: block;
   }
 
   .nav-links {
