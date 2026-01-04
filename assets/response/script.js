@@ -115,10 +115,9 @@ document.addEventListener("DOMContentLoaded", () => {
   TYPING EFFECT
 ========================= */
 const textArray = [
-  "Hello, I'm Nirakara Mishra 👋",
-  "Cybersecurity Enthusiast 🔐",
-  "Digital Defender & Ethical Hacker-in-Training 🛡️",
-  "Building a Safer Digital Future 🌐"
+  "Hello, I’m Nirakara Mishra 👋",
+  "Aspiring Cybersecurity Analyst",
+  "SOC & Threat Detection Enthusiast 🛡️",
 ];
 
 let typingIndex = 0;
