@@ -1,5 +1,19 @@
 
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+
+  <!-- Stroke Color -->
+  <style>
+      path { 
+        stroke: #38b2ac; 
+      }
+
+      @media (prefers-color-scheme: dark) {
+        path { 
+          stroke: #00ff7f; 
+        }
+      }
+    </style>
+
   <!-- Shield -->
   <path
     d="M16 2
@@ -10,7 +24,7 @@
        V5
        C25 5,21 4,16 2 Z"
     fill="none"
-    stroke="#38b2ac"
+    stroke="currentColor"
     stroke-width="3.5"
     stroke-linejoin="round"
   />
@@ -18,7 +32,7 @@
   <!-- N -->
   <path
     d="M13 12 V20 L19 12 V20"
-    stroke="#38b2ac"
+    stroke="currentColor"
     stroke-width="3.5"
     stroke-linecap="round"
     stroke-linejoin="round"
