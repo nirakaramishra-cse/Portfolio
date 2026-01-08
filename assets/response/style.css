@@ -714,160 +714,204 @@ body.dark-mode #hero .btnn:hover {
 }
 
 
- /* =========================
-   About Section
+/* =========================
+  About Section
+  ========================= */
+#about {
+  padding: 70px 20px;
+  background-color: #f7f9fc;
+  color: #0f172a;
+}
+
+#about h2 {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 45px;
+  color: #222;
+}
+
+/* =========================
+   About Layout
    ========================= */
-  #about {
-    padding: 4rem 1.5rem;
-    background-color: #f7f9fc;
-    font-family: 'Segoe UI', sans-serif;
-  }
+.about-container {
+  max-width: 1100px;
+  margin: 0 auto;
 
-  #about h2 {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 40px;
+  align-items: center;
+}
+
+/* =========================
+   Profile Image
+   ========================= */
+.about-image {
+  text-align: center;
+}
+
+.profile-img {
+  width: 220px;
+  height: 220px;
+  object-fit: cover;
+
+  border-radius: 50%;
+  border: 4px solid #38b2ac;
+
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease;
+}
+
+.profile-img:hover {
+  transform: scale(1.03);
+}
+
+/* =========================
+   About Content
+   ========================= */
+.about-content {
+  max-width: 720px;
+}
+
+.about-content h4 {
+  font-size: 1.3rem;
+  margin-bottom: 16px;
+  color: #065f46;
+  line-height: 1.4;
+}
+
+.about-content p {
+  font-size: 1rem;
+  line-height: 1.7;
+  margin-bottom: 14px;
+  color: #334155;
+}
+
+/* Intro paragraph */
+.about-intro {
+  font-weight: 500;
+}
+
+/* =========================
+   Highlights List
+   ========================= */
+.about-highlights {
+  list-style: none;
+  padding: 0;
+  margin: 18px 0 22px;
+
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 12px;
+}
+
+.about-highlights li {
+  background-color: #ffffff;
+  padding: 10px 14px;
+
+  border-left: 4px solid #38b2ac;
+  border-radius: 6px;
+
+  font-size: 0.95rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+}
+
+/* =========================
+   Resume Button
+   ========================= */
+.resume-button {
+  display: inline-block;
+  margin-top: 20px;
+
+  min-height: 44px;
+  padding: 10px 20px;
+  font-size: 0.95rem;
+  font-weight: 600;
+
+  color: #053b3a;
+  background-color: #e6fffa;
+  border: 1.5px solid #38b2ac;
+  border-radius: 8px;
+
+  text-decoration: none;
+  transition: background-color 0.25s ease,
+              color 0.25s ease,
+              transform 0.2s ease;
+}
+
+.resume-button:hover {
+  background-color: #38b2ac;
+  color: #ffffff;
+  transform: translateY(-2px);
+}
+
+/* =========================
+   Dark Mode
+   ========================= */
+body.dark-mode #about {
+  background-color: #0d1117;
+  color: #f0f6fc;
+}
+
+body.dark-mode #about h2 {
+  color: #f0f6fc;
+}
+
+body.dark-mode .about-content h4 {
+  color: #00ff7f;
+}
+
+body.dark-mode .about-content p {
+  color: #c9d1d9;
+}
+
+body.dark-mode .profile-img {
+  border-color: #00ff7f;
+  box-shadow: 0 0 24px rgba(0, 255, 127, 0.35);
+}
+
+body.dark-mode .about-highlights li {
+  background-color: #161b22;
+  border-left-color: #00ff7f;
+  color: #c9d1d9;
+}
+
+body.dark-mode .resume-button {
+  background-color: #0f2e2b;
+  color: #00ff7f;
+  border-color: #00ff7f;
+}
+
+body.dark-mode .resume-button:hover {
+  background-color: #083d32;
+}
+
+/* =========================
+   Responsive (Mobile)
+   ========================= */
+@media (max-width: 768px) {
+  .about-container {
+    grid-template-columns: 1fr;
     text-align: center;
-    font-size: 2.2rem;
-    margin-bottom: 2rem;
-    position: relative;
-    color: #222;
   }
 
-  #about h2::after {
-    content: '';
-    display: block;
-    width: 60px;
-    height: 3px;
-    background-color: #38b2ac; /* unified teal */
-    margin: 12px auto 0;
-    border-radius: 2px;
+  .about-highlights {
+    grid-template-columns: 1fr;
   }
 
-  .aboutt {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 2rem;
-
-    max-width: 1100px;
-    margin: 0 auto;
-
-    background-color: #ffffff;
-    padding: 2rem;
-    border-radius: 16px;
-
-    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.05);
-    transition: transform 0.25s ease, box-shadow 0.25s ease;
+  .profile-img {
+    width: 180px;
+    height: 180px;
+    margin-bottom: 20px;
   }
+}
 
-  .aboutt:hover {
-    transform: translateY(-4px);
+@media (hover: none) {
+  .profile-img:hover {
+    transform: none;
   }
+}
 
-  .aboutt .profile-img {
-    width: 250px;
-    height: 300px;
-    border-radius: 6px;
-    object-fit: cover;
-    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
-    margin-bottom: 0.5rem;
-  }
-
-  .aboutt h4 {
-    font-size: 1.2rem;
-    font-weight: 600;
-    color: #38b2ac;
-    text-align: center;
-    flex-basis: 100%;
-    margin-top: 1rem;
-  }
-
-  .aboutt p {
-    font-size: 1.05rem;
-    line-height: 1.7;
-    color: #333;
-    margin-bottom: 1rem;
-    text-align: left;
-    flex-basis: 100%;
-  }
-
-  #about .resume-button {
-    display: inline-block;
-    margin-top: 1.5rem;
-    padding: 10px 20px;
-
-    background-color: #38b2ac;
-    color: #ffffff;
-
-    font-weight: 500;
-    text-decoration: none;
-    border-radius: 8px;
-    border: 1px solid #38b2ac;
-
-    transition: background-color 0.25s ease, transform 0.2s ease;
-    text-align: center;
-  }
-
-  #about .resume-button:hover {
-    background-color: #2c9a94;
-    transform: translateY(-2px);
-  }
-
-  body.dark-mode #about {
-    background-color: #0d1117;
-    color: #f0f6fc;
-  }
-
-  body.dark-mode .aboutt {
-    background-color: #22272e;
-    box-shadow: 0 10px 30px rgba(0, 255, 127, 0.05);
-    border: 1px solid #1f6f5b;
-  }
-
-  body.dark-mode #about h2 {
-    color: #f0f6fc; /* consistent with other section headings */
-  }
-
-  body.dark-mode #about h2::after {
-    background-color: #00ff7f;
-  }
-
-  body.dark-mode .aboutt h4 {
-    color: #00ff7f;
-  }
-
-  body.dark-mode .aboutt p {
-    color: #cccccc;
-  }
-
-  body.dark-mode #about .resume-button {
-    background-color: #0f2e2b;
-    color: #00ff7f;
-    border-color: #00ff7f;
-  }
-
-  body.dark-mode #about .resume-button:hover {
-    background-color: #083d32;
-  }
-
-  @media (max-width: 768px) {
-    .aboutt {
-      flex-direction: column;
-      align-items: center;
-      padding: 1.5rem;
-    }
-
-    .aboutt .profile-img {
-      width: 140px;
-      height: 140px;
-    }
-
-    .aboutt h4 {
-      font-size: 1.1rem;
-    }
-
-    .aboutt p {
-      font-size: 1rem;
-    }
-  }
 
 
   /* =========================
