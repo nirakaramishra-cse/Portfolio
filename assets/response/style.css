@@ -989,7 +989,7 @@ body.dark-mode .resume-button:hover {
 
 .tskill ul li:hover {
   background-color: #ecf5fc;
-  transform: translateX(4px);
+  transform: translateX(2px);
 }
 
 .tskill ul li:hover::before {
@@ -1010,7 +1010,7 @@ body.dark-mode .resume-button:hover {
   padding: 0.5rem 1rem;
   font-size: 1rem;
   font-weight: 700;
-  letter-spacing: 2px;
+  letter-spacing: 1px;
   text-decoration: none;
 
   color: #065f46;
