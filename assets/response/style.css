@@ -904,14 +904,10 @@ body.dark-mode .resume-button:hover {
     height: 180px;
     margin-bottom: 20px;
   }
-}
-
-@media (hover: none) {
   .profile-img:hover {
     transform: none;
   }
 }
-
 
 
   /* =========================
