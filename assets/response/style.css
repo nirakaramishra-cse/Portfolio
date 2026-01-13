@@ -730,6 +730,23 @@ body.dark-mode #hero .btnn:hover {
   color: #222;
 }
 
+
+/* =========================
+   About Section
+   ========================= */
+#about {
+  padding: 80px 20px;
+  background-color: #f7f9fc;
+  color: #0f172a;
+}
+
+#about h2 {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 45px;
+  color: #222;
+}
+
 /* =========================
    About Layout
    ========================= */
@@ -738,8 +755,8 @@ body.dark-mode #hero .btnn:hover {
   margin: 0 auto;
 
   display: grid;
-  grid-template-columns: 1fr 2fr;
-  gap: 40px;
+  grid-template-columns: 260px 1fr;
+  gap: 50px;
   align-items: center;
 }
 
@@ -766,34 +783,31 @@ body.dark-mode #hero .btnn:hover {
   transform: scale(1.03);
 }
 
+
 /* =========================
    About Content
    ========================= */
 .about-content {
-  max-width: 720px;
-  text-align: left;
+  width: 100%;
 }
 
 .about-content h4 {
-  font-size: 1.35rem;
-  margin-bottom: 18px;
+  font-size: 1.3rem;
+  margin-bottom: 16px;
   color: #38b2ac;
   line-height: 1.4;
-  font-weight: 700;
 }
 
 .about-content p {
-  font-size: 1.05rem;
-  line-height: 1.8;
-  margin-bottom: 16px;
+  font-size: 1rem;
+  line-height: 1.7;
+  margin-bottom: 14px;
   color: #334155;
 }
 
 /* Intro paragraph */
 .about-intro {
-  font-weight: 600;
-  color: #0f766e;
-  font-size: 1.08rem;
+  font-weight: 500;
 }
 
 /* =========================
@@ -805,19 +819,19 @@ body.dark-mode #hero .btnn:hover {
   margin: 18px 0 22px;
 
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
   gap: 12px;
 }
 
 .about-highlights li {
   background-color: #ffffff;
-  padding: 12px 16px;
+  padding: 12px 14px;
 
   border-left: 4px solid #38b2ac;
   border-radius: 6px;
 
   font-size: 0.95rem;
-  line-height: 1.5;
+  color: #0f172a;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
 }
 
@@ -827,9 +841,9 @@ body.dark-mode #hero .btnn:hover {
 .resume-button {
   display: inline-block;
   margin-top: 20px;
-
+  
   min-height: 44px;
-  padding: 10px 20px;
+  padding: 10px 22px;
   font-size: 0.95rem;
   font-weight: 600;
 
@@ -867,12 +881,7 @@ body.dark-mode .about-content h4 {
 }
 
 body.dark-mode .about-content p {
-  color: #d1d5db;
-  line-height: 1.85;
-}
-
-body.dark-mode .about-intro {
-  color: #00ff7f;
+  color: #c9d1d9;
 }
 
 body.dark-mode .profile-img {
@@ -897,7 +906,7 @@ body.dark-mode .resume-button:hover {
 }
 
 /* =========================
-   Responsive (Mobile)
+   Responsive (Tablet & Mobile)
    ========================= */
 @media (max-width: 768px) {
   .about-container {
@@ -907,6 +916,7 @@ body.dark-mode .resume-button:hover {
 
   .about-content {
     text-align: left;
+    padding: 0 5px;
   }
 
   .about-highlights {
@@ -914,19 +924,26 @@ body.dark-mode .resume-button:hover {
   }
 
   .profile-img {
-    width: 180px;
-    height: 180px;
-    margin-bottom: 20px;
+    width: 170px;
+    height: 170px;
+    margin-bottom: 15px;
   }
+
   .profile-img:hover {
     transform: none;
+  }
+
+  .resume-button {
+    display: block;
+    width: fit-content;
+    margin: 18px auto 0;
   }
 }
 
 
-  /* =========================
-   Skills Section
-   ========================= */
+/* =========================
+  Skills Section
+========================= */
 #skills {
   background-color: #f7f9fc;
   padding: 60px 20px;
