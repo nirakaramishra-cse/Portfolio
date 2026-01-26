@@ -2253,17 +2253,22 @@ body.dark-mode .testimonial-card:hover {
   font-size: 0.9rem;
   margin-bottom: 15px;
   text-align: center;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+.form-status.show {
+  display: block;
+  opacity: 1;
 }
 
 .form-status.success {
-  display: block;
   background-color: #d1fae5;
   color: #065f46;
   border: 1px solid #34d399;
 }
 
 .form-status.error {
-  display: block;
   background-color: #fee2e2;
   color: #7f1d1d;
   border: 1px solid #f87171;
