@@ -10,11 +10,11 @@
     <meta name="author" content="Nirakara Mishra">
     <meta name="copyright" content="© 2025 Nirakar Mishra. All rights reserved.">
   <!-- SEO Meta Tags -->
-    <meta name="title" content="Nirakara Mishra | Cybersecurity Portfolio">
+    <meta name="title" content="Nirakara Mishra | Portfolio">
     <meta name="keywords" content="Cybersecurity, Portfolio, Certifications, IDPS, Web App Security, Ethical Hacking, Security Analyst">
     <meta name="description" content="Cybersecurity Portfolio of Nirakara Mishra, Explore projects, certifications, passionate about network security, threat analysis, and ethical hacking. and real-world defense strategies."> 
   <!-- Page Title -->
-    <title>Nirakara Mishra | Cybersecurity Portfolio</title>
+    <title>Nirakara Mishra | Portfolio</title>
   <!-- Theme Color for Mobile Browsers -->
     <meta name="theme-color" content="#0b0c10">
   <!-- Favicon -->
@@ -24,7 +24,11 @@
   <!-- Canonical Link -->
     <link rel="canonical" href="https://nirakaramishra-cse.github.io/Portfolio/">  
 
-      <link rel="stylesheet" href="assets/response/style.css">
+    <link rel="stylesheet" href="assets/response/style.css">
+  
+    <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js" defer></script>
+  
+    <script src="assets/response/script.js" defer></script>
 </head>
 
 <body>
@@ -909,23 +913,87 @@
   </section>
 
    <!-- Contact Section -->
-  <section id="contact" class="section">
-    <h2>📬 Contact Me</h2>
-    <p>If you're interested in opportunities, collaborations, or have any questions, feel free to get in touch!</p>
-      <!-- Google Form Embed -->
-      <div class="form-container">
-        <iframe 
-          src="https://docs.google.com/forms/d/e/1FAIpQLSeCAZT08ma4Kz2l4-N1wzRLEb-fIREBtCqPnDOWHw_8-CKEDg/viewform?embedded=true" 
-          width="100%" 
-          height="800" 
-          frameborder="0" 
-          marginheight="0" 
-          marginwidth="0"
-          loading="lazy">
-          Loading…
-        </iframe>
+    <section id="contact" class="section">
+  <h2>📬 Contact Me</h2>
+     <p class="contact-text">
+      If you're interested in opportunities, collaborations, or have any questions, feel free to get in touch!
+    </p>
+
+  <div class="contact-card">
+    <div id="form-status" class="form-status"></div>
+
+    <form id="contact-form">
+
+      <!-- Honeypot (anti-bot) -->
+      <input 
+      type="text" 
+      name="company" 
+      id="company" 
+      autocomplete="off" 
+      style="display:none;">
+
+      <!-- Full Name -->
+      <div class="form-group">
+        <label for="name">Full Name *</label>
+        <input 
+          type="text"
+          id="name"
+          name="name"
+          placeholder="Your Name"
+          autocomplete="name"
+          required>
       </div>
-    <div class="contact-info">
+
+      <!-- Email -->
+      <div class="form-group">
+        <label for="email">Email Address *</label>
+        <input 
+          type="email" 
+          id="email" 
+          name="email" 
+          placeholder="Your Email Address"
+          autocomplete="email"
+          required>
+      </div>
+
+      <!-- Subject -->
+      <div class="form-group">
+        <label for="subject">Subject</label>
+        <input 
+          type="text" 
+          id="subject" 
+          name="subject" 
+          placeholder="Subject (Optional)"
+          autocomplete="off">
+      </div>
+
+      <!-- Message -->
+      <div class="form-group">
+        <label for="message">Message *</label>
+        <textarea 
+          id="message" 
+          name="message" 
+          rows="5"
+          placeholder="Write your message here..."
+          autocomplete="off"
+          required></textarea>
+      </div>
+
+      <!-- Submit Button -->
+      <button type="submit" class="contact-btn">
+        Send Message
+      </button>
+
+    </form>
+  </div>
+
+  <div>
+    <p class="contact-location">
+      📍 Based in Odisha, India • Open to Remote Opportunities
+    </p>
+  </div>
+      
+  <div class="contact-info">
       <p><strong>Location:</strong> Odisha, India 🇮🇳</p>
       <div class="social-links">
         <a class="social-link" data-tooltip="Gmail">
@@ -945,8 +1013,9 @@
         </a>
       </div>  
     </div>
-  </section>
+</section>
 
+          
   <!-- Footer Section -->
     <footer class="footer">
       <div class="footer-container">
@@ -962,7 +1031,6 @@
       </div>
     </footer>
 
-    <script src="assets/response/script.js" defer></script>
 </body>
 </html>
 
