@@ -1,5 +1,4 @@
 
-
 /* =========================
    Mobile Navigation Toggle
    ========================= */
@@ -273,7 +272,59 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 
+/* =========================
+  Initialize EmailJS
+========================= */
 
+(function () {
+  emailjs.init("g0UvQadnbvdfdkaoq"); 
+})();
+
+const form = document.getElementById("contact-form");
+const statusBox = document.getElementById("form-status");
+
+form.addEventListener("submit", function (e) {
+  e.preventDefault();
+
+  // Honeypot check
+  const honeypot = document.getElementById("company").value;
+  if (honeypot !== "") {
+    return; // Bot detected, silently stop
+  }
+
+  const name = document.getElementById("name").value.trim();
+  const email = document.getElementById("email").value.trim();
+  const message = document.getElementById("message").value.trim();
+
+  if (!name || !email || !message) {
+    showStatus("Please fill in all required fields.", "error");
+    return;
+  }
+
+  if (message.length > 500) {
+    showStatus("Message must be under 500 characters.", "error");
+    return;
+  }
+
+  emailjs.sendForm(
+    "service_31cvg1h", 
+    "template_5squql6", 
+    form
+  )
+  .then(() => {
+    showStatus("Message sent successfully! I will contact you soon.", "success");
+    form.reset();
+  })
+  .catch((error) => {
+    showStatus("Failed to send message. Please try again later.", "error");
+    console.error("EmailJS Error:", error);
+  });
+});
+
+function showStatus(message, type) {
+  statusBox.textContent = message;
+  statusBox.className = `form-status ${type}`;
+}
 
 
 
