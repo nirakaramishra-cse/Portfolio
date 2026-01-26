@@ -321,9 +321,18 @@ form.addEventListener("submit", function (e) {
   });
 });
 
+
 function showStatus(message, type) {
   statusBox.textContent = message;
-  statusBox.className = `form-status ${type}`;
+  statusBox.className = `form-status ${type} show`;
+
+  setTimeout(() => {
+    statusBox.classList.remove("show");
+
+    setTimeout(() => {
+      statusBox.style.display = "none";
+    }, 500);
+  }, 4000);
 }
 
 
