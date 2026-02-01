@@ -1339,7 +1339,7 @@ body.dark-mode .thm-btn:hover {
 .project-card h3 {
   font-size: 1.3rem;
   margin-bottom: 10px;
-  color: #333;
+  color: #38b2ac;
 }
 
 .project-card p {
@@ -1427,7 +1427,7 @@ body.dark-mode .project-card {
 }
 
 body.dark-mode .project-card h3 {
-  color: #e0e0e0;
+  color: #00ff7f;
 }
 
 body.dark-mode .project-card p,
