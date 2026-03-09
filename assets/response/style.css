@@ -478,15 +478,17 @@ body.dark-mode .menu-toggle[aria-expanded="true"] {
     width: min(90%, 420px);
     padding: 0.8rem 0;
 
-    background: #ffffff;
-    border-radius: 12px;
-
     display: none;
     flex-direction: column;
     align-items: center;
 
-    border: 1px solid #e5e7eb;
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-radius: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
   }
 
   .nav-links.open {
@@ -537,9 +539,10 @@ body.dark-mode .menu-toggle[aria-expanded="true"] {
   border-radius: 16px;
   overflow: hidden;
 
+ 
   background: linear-gradient(
-    rgba(0, 0, 0, 0.72),
-    rgba(0, 0, 0, 0.72)
+     rgba(0,0,0,0.72),
+     rgba(0,0,0,0.78)
   );
 
   color: #e6fffa;
@@ -558,6 +561,8 @@ body.dark-mode .menu-toggle[aria-expanded="true"] {
   object-fit: cover;
   opacity: 0.55;
   z-index: 0;
+
+  will-change: transform;
 
   filter: saturate(1.1) contrast(1.05);
   animation: zoomLoop 10s ease-in-out infinite alternate;
@@ -598,24 +603,82 @@ body:not(.dark-mode) #binaryRain {
   width: 100%;
 
   margin: 0 auto;
-  padding: 0 1rem;
+  padding: 1.8rem;
+
+  border-radius: 12px;
+
+  backdrop-filter: blur(6px);
+  background: rgba(0, 0, 0, 0.25);
+
+  border: 1px solid rgba(255,255,255,0.08);
+
+  animation: heroFade 1s ease-out;
+}
+
+@keyframes heroFade {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 #hero h1 {
-  font-size: 3rem;
+  font-size: 2.5rem;
   margin-bottom: 1rem;
   font-family: "Courier New", monospace;
   color: #ffffff;
+  max-width: 650px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 #hero p {
   font-size: 1.25rem;
-  margin-bottom: 1.8rem;
+  margin-bottom: 1.5rem;
   line-height: 1.6;
-
   color: #b2f5ea;
-  font-weight: 600;
+  font-weight: 500;
   letter-spacing: 0.4px;
+  max-width: 650px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#typing::after {
+  content: "|";
+  animation: blink 1s infinite;
+}
+
+@keyframes blink {
+  0% {opacity: 1;}
+  50% {opacity: 0;}
+  100% {opacity: 1;}
+}
+
+.hero-glow {
+  position: absolute;
+  width: 420px;
+  height: 420px;
+
+  background: radial-gradient(
+    circle,
+    rgba(56,178,172,0.35) 0%,
+    rgba(56,178,172,0.15) 40%,
+    transparent 70%
+  );
+
+  filter: blur(70px);
+
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  z-index: 1;
+  pointer-events: none;
 }
 
 /* =========================
@@ -640,6 +703,11 @@ body:not(.dark-mode) #binaryRain {
   background-color: #2c9a94;
   color: #ffffff;
   transform: translateY(-2px);
+}
+
+#hero .btnn:focus {
+  outline: 2px solid #38b2ac;
+  outline-offset: 3px;
 }
 
 /* =========================
@@ -675,12 +743,25 @@ body.dark-mode #hero .btnn:hover {
   background-color: #083d32;
 }
 
+body.dark-mode .hero-content {
+  background: rgba(13, 17, 23, 0.35);
+}
+
+body.dark-mode .hero-glow {
+  background: radial-gradient(
+    circle,
+    rgba(0,255,127,0.35) 0%,
+    rgba(0,255,127,0.15) 40%,
+    transparent 70%
+  );
+}
+
 /* =========================
    RESPONSIVE
 ========================= */
 @media (max-width: 768px) {
   #hero {
-    min-height: auto;
+    min-height: 50vh;
     padding: 2rem 1.5rem;
   }
 
@@ -690,11 +771,11 @@ body.dark-mode #hero .btnn:hover {
   }
 
   #hero h1 {
-    font-size: 2.2rem;
+    font-size: 1.5rem;
   }
 
   #hero p {
-    font-size: 1rem;
+    font-size: 0.8rem;
   }
 
   #hero .btnn {
@@ -710,6 +791,14 @@ body.dark-mode #hero .btnn:hover {
 @media (prefers-reduced-motion: reduce) {
   #binaryRain {
     display: none;
+  }
+
+  .hero-img {
+    animation: none;
+  }
+
+  .hero-content {
+    animation: none;
   }
 }
 
