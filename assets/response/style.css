@@ -469,7 +469,7 @@ body.dark-mode .menu-toggle[aria-expanded="true"] {
     padding: 0.5rem 1rem;
   }
 
-  .nav-links {
+   .nav-links {
     position: absolute;
     top: 72px;
     left: 50%;
@@ -482,14 +482,15 @@ body.dark-mode .menu-toggle[aria-expanded="true"] {
     flex-direction: column;
     align-items: center;
 
-
-    background: rgba(255, 255, 255, 0.15);
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
+    /* LIGHT THEME  */
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(12px); 
+    -webkit-backdrop-filter: blur(12px);
+    
     border-radius: 16px;
-    border: 1px solid rgba(255, 255, 255, 0.3);
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-  }
+    border: 1px solid rgba(0, 0, 0, 0.08); 
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1); 
+ }
 
   .nav-links.open {
     display: flex;
@@ -528,7 +529,7 @@ body.dark-mode .menu-toggle[aria-expanded="true"] {
 #hero {
   position: relative;
   width: 100%;
-  min-height: 80vh;
+  min-height: 85vh;
 
   display: flex;
   align-items: center;
@@ -641,7 +642,7 @@ body:not(.dark-mode) #binaryRain {
   margin-bottom: 1.5rem;
   line-height: 1.6;
   color: #b2f5ea;
-  font-weight: 500;
+  font-weight: 550;
   letter-spacing: 0.4px;
   max-width: 650px;
   margin-left: auto;
@@ -761,8 +762,8 @@ body.dark-mode .hero-glow {
 ========================= */
 @media (max-width: 768px) {
   #hero {
-    min-height: 50vh;
     padding: 2rem 1.5rem;
+    min-height: 55vh;
   }
 
   .hero-img {
