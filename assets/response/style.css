@@ -768,7 +768,7 @@ body.dark-mode .hero-glow {
 @media (max-width: 768px) {
   #hero {
     padding: 2rem 1.5rem;
-    min-height: 45vh;
+    min-height: 50vh;
   }
 
    #typing {
