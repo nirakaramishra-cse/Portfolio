@@ -468,33 +468,39 @@ body.dark-mode .menu-toggle[aria-expanded="true"] {
   nav {
     padding: 0.5rem 1rem;
   }
+ 
+.nav-links {
+  position: absolute;
+  top: 72px;
+  left: 50%;
+  transform: translate(-50%, -10px);
 
-   .nav-links {
-    position: absolute;
-    top: 72px;
-    left: 50%;
-    transform: translateX(-50%);
+  width: min(90%, 420px);
+  padding: 0.8rem 0;
 
-    width: min(90%, 420px);
-    padding: 0.8rem 0;
+  display: none;
+  flex-direction: column;
+  align-items: center;
 
-    display: none;
-    flex-direction: column;
-    align-items: center;
+  opacity: 0;
+  transition: opacity 0.25s ease, transform 0.25s ease;
 
-    /* LIGHT THEME  */
-    background: rgba(255, 255, 255, 0.7);
-    backdrop-filter: blur(12px); 
-    -webkit-backdrop-filter: blur(12px);
-    
-    border-radius: 16px;
-    border: 1px solid rgba(0, 0, 0, 0.08); 
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1); 
- }
+  z-index: 1000;
 
-  .nav-links.open {
-    display: flex;
-  }
+  background: rgba(255,255,255,0.82);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+
+  border-radius: 16px;
+  border: 1px solid rgba(0,0,0,0.08);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+.nav-links.open {
+  display: flex;
+  opacity: 1;
+  transform: translate(-50%,0);
+}
 
   body.dark-mode .nav-links {
     background: linear-gradient(
@@ -511,6 +517,7 @@ body.dark-mode .menu-toggle[aria-expanded="true"] {
     color: #00ff7f;
   }
 }
+
 
 
 /* =========================
@@ -2552,44 +2559,6 @@ body.dark-mode .email-icon {
 }
 
 /* =========================
-   Back To Top Button
-   ========================= */
-#backToTopBtn {
-  position: fixed;
-  bottom: 30px;
-  right: 20px;
-  z-index: 999;
-  padding: 6px;
-  font-size: 20px;
-
-  background-color: #e6fffa;
-  color: #065f46;
-  border: 1px solid #38b2ac;
-  border-radius: 6px;
-
-  cursor: pointer;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
-
-  opacity: 0;
-  pointer-events: none;
-  transition:
-    opacity 0.3s ease,
-    background-color 0.3s ease,
-    transform 0.2s ease;
-}
-
-#backToTopBtn.show {
-  opacity: 1;
-  pointer-events: auto;
-}
-
-#backToTopBtn:hover {
-  background-color: #38b2ac;
-  color: #ffffff;
-  transform: translateY(-2px);
-}
-
-/* =========================
    Dark Mode – Footer
    ========================= */
 body.dark-mode .footer {
@@ -2614,20 +2583,6 @@ body.dark-mode .footer-nav a:focus-visible {
 }
 
 /* =========================
-   Dark Mode – Back To Top
-   ========================= */
-body.dark-mode #backToTopBtn {
-  background-color: #0f2e2b;
-  color: #00ff7f;
-  border-color: #00ff7f;
-  box-shadow: 0 2px 10px rgba(0, 255, 127, 0.25);
-}
-
-body.dark-mode #backToTopBtn:hover {
-  background-color: #083d32;
-}
-
-/* =========================
    Responsive Adjustments
    ========================= */
 @media (max-width: 768px) {
@@ -2639,13 +2594,97 @@ body.dark-mode #backToTopBtn:hover {
   .footer-nav {
    gap: 15px;
   }
+}
 
+
+/* =========================
+   Back To Top Button
+   ========================= */
+#backToTopBtn {
+  position: fixed;
+  bottom: 30px;
+  right: 20px;
+  z-index: 999;
+
+  min-width: 40px;
+  min-height: 40px;
+  padding: 10px;
+
+  font-size: 20px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background-color: #e6fffa;
+  color: #065f46;
+
+  border: 1px solid #38b2ac;
+  border-radius: 6px;
+
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+
+  opacity: 0;
+  pointer-events: none;
+
+  transition:
+    opacity 0.3s ease,
+    background-color 0.3s ease,
+    transform 0.2s ease;
+}
+
+#backToTopBtn {
+  transform: scale(0.9);
+}
+
+#backToTopBtn.show {
+  opacity: 1;
+  pointer-events: auto;
+  transform: scale(1);
+}
+
+#backToTopBtn:hover {
+  background-color: #38b2ac;
+  color: #ffffff;
+  transform: translateY(-2px);
+}
+
+#backToTopBtn:focus {
+  outline: 2px solid #38b2ac;
+  outline-offset: 3px;
+}
+
+/* =========================
+   Responsive Adjustments
+   ========================= */
+@media (max-width: 768px) {
   #backToTopBtn {
     bottom: 20px;
     right: 15px;
-    padding: 5px;
-    font-size: 15px;
   }
 }
+
+/* =========================
+   Dark Mode – Back To Top
+   ========================= */
+body.dark-mode #backToTopBtn {
+  background-color: #0f2e2b;
+  color: #00ff7f;
+  border-color: #00ff7f;
+  box-shadow: 0 4px 14px rgba(0, 255, 127, 0.25);
+}
+
+body.dark-mode #backToTopBtn:hover {
+  background-color: #083d32;
+  transform: translateY(-2px);
+}
+
+body.dark-mode #backToTopBtn:focus {
+  outline: 2px solid #00ff7f;
+  outline-offset: 3px;
+}
+
+
 
 
