@@ -2227,15 +2227,13 @@ body.dark-mode .testimonial-card:hover {
   box-shadow: 0 8px 20px rgba(240, 246, 252, 0.08);
 }
 
-
 /* =========================
    Contact Section
-   ========================= */
+========================= */
 #contact {
   padding: 60px 20px;
   background-color: #f7f9fc;
-  color: #000000;
-  
+  color: #000;
 }
 
 #contact h2 {
@@ -2257,32 +2255,31 @@ body.dark-mode .testimonial-card:hover {
   text-align: center;
   font-size: 0.9rem;
   color: #666;
-  margin-bottom: 35px;
-  margin-top: 25px;
+  margin: 25px 0 35px;
 }
 
 /* =========================
    Contact Card
-   ========================= */
+========================= */
 .contact-card {
   max-width: 600px;
   margin: 0 auto;
-  background: #ffffff;
+  background: #fff;
   padding: 30px;
   border-radius: 12px;
   border: 1px solid #e5e7eb;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+  transition: transform .25s ease, box-shadow .25s ease;
 }
 
 .contact-card:hover {
   transform: translateY(-3px);
-  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.12);
+  box-shadow: 0 8px 22px rgba(0,0,0,0.12);
 }
 
 /* =========================
-   Form Styling
-   ========================= */
+   Form Layout
+========================= */
 #contact-form {
   display: flex;
   flex-direction: column;
@@ -2295,7 +2292,7 @@ body.dark-mode .testimonial-card:hover {
 }
 
 .form-group label {
-  font-size: 0.95rem;
+  font-size: .95rem;
   font-weight: 600;
   margin-bottom: 6px;
   color: #111827;
@@ -2303,14 +2300,14 @@ body.dark-mode .testimonial-card:hover {
 
 .form-group input,
 .form-group textarea {
+  width: 100%;
   padding: 10px 12px;
   border-radius: 6px;
-  width: 100%;
   border: 1px solid #d1d5db;
-  font-size: 0.95rem;
+  font-size: .95rem;
   font-family: inherit;
   outline: none;
-  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  transition: border-color .2s ease, box-shadow .2s ease;
 }
 
 .form-group textarea {
@@ -2320,14 +2317,12 @@ body.dark-mode .testimonial-card:hover {
 .form-group input:focus,
 .form-group textarea:focus {
   border-color: #38b2ac;
-  box-shadow: 0 0 0 2px rgba(56, 178, 172, 0.15);
+  box-shadow: 0 0 0 2px rgba(56,178,172,.15);
 }
 
-
 /* =========================
-   Input Validation Feedback
-   ========================= */
-
+   Validation
+========================= */
 .form-group input:invalid,
 .form-group textarea:invalid {
   border-color: #f87171;
@@ -2340,34 +2335,28 @@ body.dark-mode .testimonial-card:hover {
 
 .form-group input:focus:invalid,
 .form-group textarea:focus:invalid {
-  box-shadow: 0 0 0 2px rgba(248, 113, 113, 0.15);
+  box-shadow: 0 0 0 2px rgba(248,113,113,.15);
 }
 
 .form-group input:focus:valid,
 .form-group textarea:focus:valid {
-  box-shadow: 0 0 0 2px rgba(52, 211, 153, 0.15);
+  box-shadow: 0 0 0 2px rgba(52,211,153,.15);
 }
-
-.form-group input:focus + label,
-.form-group textarea:focus + label {
-  color: #38b2ac;
-}
-
 
 /* =========================
    Submit Button
-   ========================= */
+========================= */
 .contact-btn {
   margin-top: 10px;
   padding: 12px;
   background-color: #38b2ac;
-  color: #ffffff;
+  color: #fff;
   border: none;
   border-radius: 6px;
   font-size: 1rem;
   font-weight: 600;
   cursor: pointer;
-  transition: background-color 0.2s ease, transform 0.2s ease;
+  transition: background-color .2s ease, transform .2s ease;
 }
 
 .contact-btn:hover {
@@ -2380,14 +2369,12 @@ body.dark-mode .testimonial-card:hover {
   outline-offset: 3px;
 }
 
-
 /* =========================
-   Submit Button Loading State
-   ========================= */
-
+   Loading Spinner
+========================= */
 .contact-btn.loading {
   pointer-events: none;
-  opacity: 0.8;
+  opacity: .8;
 }
 
 .contact-btn.loading::after {
@@ -2395,104 +2382,91 @@ body.dark-mode .testimonial-card:hover {
   width: 16px;
   height: 16px;
   margin-left: 8px;
-  border: 2px solid #ffffff;
+  border: 2px solid #fff;
   border-top: 2px solid transparent;
   border-radius: 50%;
   display: inline-block;
-  animation: spin 0.7s linear infinite;
+  animation: spin .7s linear infinite;
 }
 
 @keyframes spin {
-  to {
-    transform: rotate(360deg);
-  }
+  to { transform: rotate(360deg); }
 }
 
+/* =========================
+   Honeypot (Spam Protection)
+========================= */
 .honeypot {
   position: absolute;
   left: -9999px;
 }
 
-
 /* =========================
    Form Status Message
-   ========================= */
+========================= */
 .form-status {
   visibility: hidden;
+  opacity: 0;
   padding: 12px;
   border-radius: 6px;
-  font-size: 0.9rem;
+  font-size: .9rem;
   margin-bottom: 15px;
   text-align: center;
-  opacity: 0;
-  transition: opacity 0.5s ease;
+  transition: opacity .4s ease;
 }
 
 .form-status.show {
-  visibility: hidden;
+  visibility: visible;
   opacity: 1;
 }
 
 .form-status.success {
-  background-color: #d1fae5;
+  background: #d1fae5;
   color: #065f46;
   border: 1px solid #34d399;
 }
 
 .form-status.error {
-  background-color: #fee2e2;
+  background: #fee2e2;
   color: #7f1d1d;
   border: 1px solid #f87171;
 }
 
-
 /* =========================
    Responsive
-   ========================= */
+========================= */
 @media (max-width: 480px) {
-  .contact-card {
-    padding: 18px;
-  }
+  .contact-card { padding: 18px; }
+  .contact-text { font-size: .95rem; }
+}
 
-  .contact-text {
-    font-size: 0.95rem;
-  }
-
+@media (max-width: 768px) {
+  .contact-card { padding: 22px; }
+  .contact-text { font-size: .95rem; }
 }
 
 /* =========================
-   Dark Mode – Contact Section
-   ========================= */
+   Dark Mode
+========================= */
 body.dark-mode #contact {
   background-color: #0d1117;
   color: #f0f6fc;
 }
 
-body.dark-mode #contact h2 {
-  color: #f0f6fc;
-}
-
-body.dark-mode .contact-text {
-  color: #c9d1d9;
-}
-
-body.dark-mode .contact-location {
-  color: #9ca3af;
-}
+body.dark-mode .contact-text { color: #c9d1d9; }
+body.dark-mode .contact-location { color: #9ca3af; }
 
 body.dark-mode .contact-card {
   background: #161b22;
   border: 1px solid #30363d;
-  box-shadow: 0 4px 16px rgba(240, 246, 252, 0.08);
+  box-shadow: 0 4px 16px rgba(240,246,252,.08);
 }
 
-body.dark-mode .form-group label {
-  color: #f0f6fc;
-}
+body.dark-mode .form-group label { color: #f0f6fc; }
 
 body.dark-mode .form-group input,
 body.dark-mode .form-group textarea {
-  background-color: #0f172a;
+  background: #0f172a;
   color: #c9d1d9;
   border: 1px solid #30363d;
 }
@@ -2500,34 +2474,30 @@ body.dark-mode .form-group textarea {
 body.dark-mode .form-group input:focus,
 body.dark-mode .form-group textarea:focus {
   border-color: #00ff7f;
-  box-shadow: 0 0 0 2px rgba(0, 255, 127, 0.15);
+  box-shadow: 0 0 0 2px rgba(0,255,127,.15);
 }
 
 body.dark-mode .contact-btn {
   background-color: #00ff7f;
-  color: #000000;
+  color: #000;
 }
 
-body.dark-mode .contact-btn:hover {
-  background-color: #00cc66;
-}
+body.dark-mode .contact-btn:hover { background-color: #00cc66; }
 
-body.dark-mode .contact-btn:focus {
-  outline: 2px solid #00ff7f;
-}
+body.dark-mode .contact-btn:focus { outline: 2px solid #00ff7f; }
 
 body.dark-mode .contact-btn.loading::after {
-  border: 2px solid #000000;
+  border: 2px solid #000;
   border-top: 2px solid transparent;
 }
 
 body.dark-mode .form-status.success {
-  background-color: rgba(0,255,127,0.15);
+  background: rgba(0,255,127,.15);
   color: #00ff7f;
 }
 
 body.dark-mode .form-status.error {
-  background-color: rgba(255,0,0,0.15);
+  background: rgba(255,0,0,.15);
   color: #ff6b6b;
 }
 
