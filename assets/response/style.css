@@ -2305,6 +2305,7 @@ body.dark-mode .testimonial-card:hover {
 .form-group textarea {
   padding: 10px 12px;
   border-radius: 6px;
+  width: 100%;
   border: 1px solid #d1d5db;
   font-size: 0.95rem;
   font-family: inherit;
@@ -2312,11 +2313,46 @@ body.dark-mode .testimonial-card:hover {
   transition: border-color 0.2s ease, box-shadow 0.2s ease;
 }
 
+.form-group textarea {
+  resize: vertical;
+}
+
 .form-group input:focus,
 .form-group textarea:focus {
   border-color: #38b2ac;
   box-shadow: 0 0 0 2px rgba(56, 178, 172, 0.15);
 }
+
+
+/* =========================
+   Input Validation Feedback
+   ========================= */
+
+.form-group input:invalid,
+.form-group textarea:invalid {
+  border-color: #f87171;
+}
+
+.form-group input:valid,
+.form-group textarea:valid {
+  border-color: #34d399;
+}
+
+.form-group input:focus:invalid,
+.form-group textarea:focus:invalid {
+  box-shadow: 0 0 0 2px rgba(248, 113, 113, 0.15);
+}
+
+.form-group input:focus:valid,
+.form-group textarea:focus:valid {
+  box-shadow: 0 0 0 2px rgba(52, 211, 153, 0.15);
+}
+
+.form-group input:focus + label,
+.form-group textarea:focus + label {
+  color: #38b2ac;
+}
+
 
 /* =========================
    Submit Button
@@ -2339,11 +2375,50 @@ body.dark-mode .testimonial-card:hover {
   transform: translateY(-2px);
 }
 
+.contact-btn:focus {
+  outline: 2px solid #38b2ac;
+  outline-offset: 3px;
+}
+
+
+/* =========================
+   Submit Button Loading State
+   ========================= */
+
+.contact-btn.loading {
+  pointer-events: none;
+  opacity: 0.8;
+}
+
+.contact-btn.loading::after {
+  content: "";
+  width: 16px;
+  height: 16px;
+  margin-left: 8px;
+  border: 2px solid #ffffff;
+  border-top: 2px solid transparent;
+  border-radius: 50%;
+  display: inline-block;
+  animation: spin 0.7s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.honeypot {
+  position: absolute;
+  left: -9999px;
+}
+
+
 /* =========================
    Form Status Message
    ========================= */
 .form-status {
-  display: none;
+  visibility: hidden;
   padding: 12px;
   border-radius: 6px;
   font-size: 0.9rem;
@@ -2354,7 +2429,7 @@ body.dark-mode .testimonial-card:hover {
 }
 
 .form-status.show {
-  display: block;
+  visibility: hidden;
   opacity: 1;
 }
 
@@ -2374,10 +2449,15 @@ body.dark-mode .testimonial-card:hover {
 /* =========================
    Responsive
    ========================= */
-@media (max-width: 600px) {
+@media (max-width: 480px) {
   .contact-card {
-    padding: 20px;
+    padding: 18px;
   }
+
+  .contact-text {
+    font-size: 0.95rem;
+  }
+
 }
 
 /* =========================
@@ -2432,6 +2512,15 @@ body.dark-mode .contact-btn:hover {
   background-color: #00cc66;
 }
 
+body.dark-mode .contact-btn:focus {
+  outline: 2px solid #00ff7f;
+}
+
+body.dark-mode .contact-btn.loading::after {
+  border: 2px solid #000000;
+  border-top: 2px solid transparent;
+}
+
 body.dark-mode .form-status.success {
   background-color: rgba(0,255,127,0.15);
   color: #00ff7f;
@@ -2440,6 +2529,16 @@ body.dark-mode .form-status.success {
 body.dark-mode .form-status.error {
   background-color: rgba(255,0,0,0.15);
   color: #ff6b6b;
+}
+
+body.dark-mode .form-group input:invalid,
+body.dark-mode .form-group textarea:invalid {
+  border-color: #ff6b6b;
+}
+
+body.dark-mode .form-group input:valid,
+body.dark-mode .form-group textarea:valid {
+  border-color: #00ff7f;
 }
 
 
