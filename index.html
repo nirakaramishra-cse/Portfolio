@@ -919,13 +919,14 @@
     </div>
   </section>
 
+          
    <!-- Contact Section -->
-    <section id="contact" class="section">
+  <section id="contact" class="section">
   <h2>📬 Contact Me</h2>
-     <p class="contact-text">
+    <p class="contact-text">
       If you're interested in opportunities, collaborations, or have any questions, feel free to get in touch!
     </p>
-
+    
   <div class="contact-card">
     <div id="form-status" class="form-status"></div>
 
@@ -937,7 +938,8 @@
       name="company" 
       id="company" 
       autocomplete="off" 
-      style="display:none;">
+      class="honeypot">
+
 
       <!-- Full Name -->
       <div class="form-group">
@@ -948,7 +950,7 @@
           name="name"
           placeholder="Your Name"
           autocomplete="name"
-          required>
+          required minlength="4">
       </div>
 
       <!-- Email -->
@@ -983,7 +985,7 @@
           rows="5"
           placeholder="Write your message here..."
           autocomplete="off"
-          required></textarea>
+          required minlength="10"></textarea>
       </div>
 
       <!-- Submit Button -->
