@@ -1178,8 +1178,8 @@ body.dark-mode .resume-button:focus {
 
 .matrix-btn {
   display: inline-block;
-  padding: 0.75rem 1.8rem;
-  font-size: 1.1rem;
+  padding: 0.7rem 1.6rem;
+  font-size: 1rem;
   font-weight: 700;
   letter-spacing: 1px;
   text-decoration: none;
@@ -1722,150 +1722,225 @@ body.dark-mode .project-card .btnn:focus {
 
 /* =========================
    Education Section
-   ========================= */
+========================= */
 #education {
   padding: 60px 20px;
   background-color: #f7f9fc;
-  color: #000000;
 }
 
 #education h2 {
   text-align: center;
   font-size: 2rem;
-  margin-bottom: 30px;
+  margin-bottom: 40px;
   color: #222;
 }
 
 /* =========================
-   Education Card
-   ========================= */
-.education-entry {
+   Education Container
+========================= */
+.education-container {
   max-width: 1000px;
-  border: 1px solid #e5e7eb;
   margin: 0 auto;
+}
+
+/* =========================
+   Education Card
+========================= */
+.education-card {
+
   background: #ffffff;
-  padding: 25px 30px;
-  border-radius: 12px;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  border-radius: 14px;
+  padding: 28px;
+
+  border: 1px solid #e5e7eb;
+  border-left: 4px solid #38b2ac;
+
+  box-shadow: 0 6px 15px rgba(0,0,0,0.08);
+
+  transition: transform 0.25s ease,
+              box-shadow 0.25s ease;
 }
 
-.education-entry:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.12);
+.education-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 22px rgba(0,0,0,0.12);
 }
 
-.education-entry h3 {
-  font-size: 1.4rem;
-  margin-bottom: 15px;
+/* =========================
+   Title
+========================= */
+.education-card h3 {
+  font-size: 1.3rem;
   color: #38b2ac;
+  margin-bottom: 12px;
 }
 
-.education-entry p {
-  font-size: 1.05rem;
-  margin: 8px 0;
-  color: #333;
-  line-height: 1.6;
+/* =========================
+   Meta Info
+========================= */
+.edu-meta {
+  font-size: 0.9rem;
+  margin: 6px 0;
+  color: #334155;
 }
 
-.education-entry p strong {
+.edu-meta strong {
   color: #111827;
 }
 
-.education-entry a {
+.edu-meta a {
   color: #38b2ac;
   text-decoration: none;
-  font-weight: 600;
+  font-weight: 500;
 }
 
-.education-entry a:hover {
+.edu-meta a:hover {
   text-decoration: underline;
 }
 
 /* =========================
-   Highlights List
-   ========================= */
-.education-entry ul {
+   Description
+========================= */
+.edu-desc {
+  font-size: 0.95rem;
+  margin: 12px 0 16px;
+  color: #475569;
+  line-height: 1.6;
+}
+
+.edu-divider{
+  height:1px;
+  background:#e5e7eb;
+  margin:14px 0;
+}
+
+/* =========================
+   Subject Title
+========================= */
+.edu-title {
+  margin-top: 12px;
+
+}
+
+/* =========================
+   Subject Grid
+========================= */
+.edu-subjects {
+
   list-style: none;
   padding: 0;
+
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 15px;
-  margin: 20px auto 25px;
+  grid-template-columns: repeat(auto-fit, minmax(220px,1fr));
+  gap: 12px;
+
+  margin-top: 12px;
 }
 
-.education-entry ul li {
-  padding: 9px 12px;
-  background-color: #ffffff;
+.edu-subjects li {
+
+  background: #f8fafc;
+  padding: 10px 12px;
+
   border-radius: 6px;
-  font-size: 15px;
-  color: #444;
+
+  font-size: 0.9rem;
+  color: #334155;
+
   box-shadow: 0 2px 4px rgba(0,0,0,0.06);
-  transition: background-color 0.2s ease, transform 0.2s ease;
+
+  transition: transform 0.2s ease,
+              background-color 0.2s ease;
 }
 
-.education-entry ul li:hover {
+.edu-subjects li:hover {
   background-color: #ecf5fc;
-  transform: translateY(-3px);
+  transform: translateY(-2px);
 }
-
 
 /* =========================
    Responsive
-   ========================= */
-@media (max-width: 768px) {
-  .education-entry {
-    padding: 20px;
+========================= */
+
+@media (max-width:768px){
+
+  #education h2{
+    font-size:1.7rem;
   }
 
-  .education-entry ul li {
-    font-size: 14px;
+  .education-card{
+    padding:22px;
   }
+
+}
+
+@media (max-width:480px){
+
+  .edu-subjects{
+    grid-template-columns:1fr;
+  }
+
 }
 
 /* =========================
-   Dark Mode – Education
-   ========================= */
-body.dark-mode #education {
-  background-color: #0d1117;
-  color: #f0f6fc;
+   Dark Mode
+========================= */
+
+body.dark-mode #education{
+  background-color:#0d1117;
 }
 
-body.dark-mode #education h2 {
-  color: #f0f6fc;
+body.dark-mode #education h2{
+  color:#f0f6fc;
 }
 
-body.dark-mode .education-entry {
-  background: #161b22;
+body.dark-mode .education-card{
+
+  background:#161b22;
   border: 1px solid #30363d;
-  box-shadow: 0 4px 16px rgba(240, 246, 252, 0.08);
+  border-left: 4px solid #00ff7f;
+
+  box-shadow:0 6px 15px rgba(240,246,252,0.05);
 }
 
-body.dark-mode .education-entry h3 {
-  color: #00ff7f;
+body.dark-mode .education-card:hover{
+  box-shadow:0 10px 22px rgba(240,246,252,0.08);
 }
 
-body.dark-mode .education-entry p {
-  color: #c9d1d9;
+body.dark-mode .education-card h3{
+  color:#00ff7f;
 }
 
-body.dark-mode .education-entry p strong {
-  color: #f0f6fc;
+body.dark-mode .edu-title {
+  margin-top: 12px;
+  color: #ffffff;
+  
 }
 
-body.dark-mode .education-entry a {
-  color: #00ff7f;
+body.dark-mode .edu-meta{
+  color:#c9d1d9;
 }
 
-body.dark-mode .education-entry ul li {
-  background-color: #0f172a;
-  color: #c9d1d9;
+body.dark-mode .edu-desc{
+  color:#c9d1d9;
 }
 
-body.dark-mode .education-entry ul li:hover {
-  background-color: rgba(0,255,127,0.08);
+body.dark-mode .edu-meta strong{
+  color:#f0f6fc;
 }
 
+body.dark-mode .edu-meta a{
+  color:#00ff7f;
+}
+
+body.dark-mode .edu-subjects li{
+  background:#0f172a;
+  color:#c9d1d9;
+}
+
+body.dark-mode .edu-subjects li:hover{
+  background-color:rgba(0,255,127,0.08);
+}
 
 
 /* =========================
