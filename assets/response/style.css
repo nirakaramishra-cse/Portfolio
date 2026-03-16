@@ -1122,6 +1122,7 @@ body.dark-mode .resume-button:focus {
   border-radius: 12px;
 
   padding: 25px;
+  border: 1px solid #e5e7eb;
 
   border-left: 4px solid #38b2ac;
 
@@ -1219,7 +1220,9 @@ body.dark-mode #skills h2 {
 
 body.dark-mode .skill-card {
   background-color: #161b22;
-  border-left-color: #00ff7f;
+   
+  border: 1px solid #30363d;
+  border-left: 4px solid #00ff7f;
 
   box-shadow: 0 6px 15px rgba(240,246,252,0.05);
 }
@@ -1245,170 +1248,278 @@ body.dark-mode .skill-card ul li::before {
 }
 
 
+
 /* =========================
-   Hands-On Learning Section
-   ========================= */
+   Labs Section
+========================= */
+
 #hands-on {
-  padding: 60px 30px;
+  padding: 60px 20px;
   background-color: #f7f9fc;
   color: #000000;
 }
 
-/* Section Title */
 #hands-on h2 {
   text-align: center;
   font-size: 2rem;
-  margin-bottom: 35px;
+  margin-bottom: 40px;
   color: #222;
 }
 
 /* =========================
-   TryHackMe Card
-   ========================= */
-.thm-card {
-  max-width: 380px;
-  margin: 0 auto 35px;
-  padding: 22px 24px;
+   Labs Grid
+========================= */
 
-  background-color: #ffffff;
-  border-radius: 14px;
-  border-top: 3px solid #38b2ac;
+.labs-container {
 
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
-  text-align: center;
+  max-width: 1100px;
+  margin: 0 auto;
 
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px,1fr));
+
+  gap: 30px;
 }
 
-.thm-card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.12);
+/* =========================
+   Lab Card
+========================= */
+
+.lab-card {
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  background: #ffffff;
+
+  border-radius: 12px;
+  padding: 25px;
+
+  border-left: 4px solid #38b2ac;
+
+  box-shadow: 0 6px 15px rgba(0,0,0,0.08);
+
+  transition: transform 0.25s ease,
+              box-shadow 0.25s ease;
 }
 
-.thm-card h3 {
-  font-size: 1.25rem;
+.lab-card:hover {
+
+  transform: translateY(-4px);
+
+  box-shadow: 0 10px 22px rgba(0,0,0,0.12);
+}
+
+/* =========================
+   Lab Title
+========================= */
+
+.lab-card h3 {
+
+  font-size: 1.2rem;
+
+  color: #38b2ac;
+
   margin-bottom: 8px;
+}
+
+/* =========================
+   Lab Subtitle
+========================= */
+
+.lab-subtitle{
+  font-size:0.9rem;
+  margin-bottom:8px;
+  color:#444;
+}
+
+/* =========================
+   Lab Description
+========================= */
+
+.lab-desc {
+
+  font-size: 0.95rem;
+
+  color: #334155;
+
+  line-height: 1.6;
+
+  margin-bottom: 15px;
+}
+
+/* =========================
+   Lab Skills
+========================= */
+
+.lab-skills {
+
+  list-style: none;
+
+  padding: 0;
+
+  margin-bottom: 10px;
+}
+
+.lab-skills li {
+
+  position: relative;
+
+  padding-left: 18px;
+
+  margin-bottom: 6px;
+
+  font-size: 0.9rem;
+
+  color: #334155;
+}
+
+.lab-skills li::before {
+
+  content: "✔";
+
+  position: absolute;
+
+  left: 0;
+
   color: #38b2ac;
 }
 
-.thm-card p {
-  font-size: 0.95rem;
-  line-height: 1.6;
-  color: #555;
-  margin-bottom: 18px;
+/* =========================
+   Lab Bottom Action Area
+========================= */
+
+.lab-actions{
+
+  margin-top:auto;
+
+  padding-top:14px;
+
+  border-top:1px solid rgba(0,0,0,0.06);
+
+  text-align:center;
 }
 
-/* Button */
-.thm-btn {
+.lab-card .btnn{
   display: inline-block;
-  padding: 8px 18px;
+  padding: 8px 14px;
+  font-size: 0.95rem;
+
 
   background-color: #e6fffa;
   color: #065f46;
-  border: 1.5px solid #38b2ac;
 
   border-radius: 8px;
-
+  border: 1.5px solid #38b2ac;
   text-decoration: none;
   font-weight: 600;
-  font-size: 0.95rem;
 
-  transition: background-color 0.25s ease, transform 0.2s ease;
+  transition: background-color 0.25s ease,
+              transform 0.2s ease;
 }
 
-.thm-btn:hover {
+.lab-card .btnn:hover {
   background-color: #38b2ac;
   color: #ffffff;
   transform: translateY(-2px);
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
 }
 
-.thm-btn:focus {
+.lab-card .btnn:focus {
   outline: 2px solid #38b2ac;
   outline-offset: 3px;
 }
 
 /* =========================
-   TryHackMe Embed 
-   ========================= */
-.thm-embed {
-  max-width: 420px;
-  margin: 0 auto;
-  display: flex;             
-  justify-content: center; 
-  padding: 0 44px;
+   Responsive
+========================= */
+
+@media (max-width:768px){
+
+  #hands-on h2{
+    font-size:1.7rem;
+  }
+
+  .lab-card{
+    padding:22px;
+  }
+
 }
 
-.thm-embed iframe {
-  max-width: 420px;  
-  width: 100%;
-  height: auto;
-  border: none;
-  border-radius: 10px;
-  display: block; 
-}
+@media (max-width:480px){
 
+  .labs-container{
+    gap:20px;
+  }
+
+  .lab-card{
+    padding:20px;
+  }
+
+}
 
 /* =========================
-   Dark Mode
-   ========================= */
-body.dark-mode #hands-on {
-  background-color: #0d1117;
-  color: #f0f6fc;
+   Dark Mode – Labs
+========================= */
+
+body.dark-mode #hands-on{
+  background-color:#0d1117;
 }
 
-body.dark-mode #hands-on h2 {
-  color: #f0f6fc;
+body.dark-mode #hands-on h2{
+  color:#f0f6fc;
 }
 
-body.dark-mode .thm-card {
-  background-color: #161b22;
-  border-top-color: #00ff7f;
-  box-shadow: 0 6px 18px rgba(240, 246, 252, 0.05);
+body.dark-mode .lab-card{
+
+  background:#161b22;
+
+  border: 1px solid #30363d;
+  border-left: 4px solid #00ff7f;
+
+  box-shadow:0 6px 15px rgba(240,246,252,0.05);
 }
 
-body.dark-mode .thm-card h3 {
-  color: #00ff7f;
+body.dark-mode .lab-card:hover{
+  box-shadow:0 10px 22px rgba(240,246,252,0.08);
 }
 
-body.dark-mode .thm-card p {
-  color: #c9d1d9;
+body.dark-mode .lab-card h3{
+  color:#00ff7f;
 }
 
-body.dark-mode .thm-btn {
+body.dark-mode .lab-subtitle{
+  color:#9ca3af;
+}
+
+body.dark-mode .lab-desc,
+body.dark-mode .lab-skills li{
+  color:#c9d1d9;
+}
+
+body.dark-mode .lab-skills li::before{
+  color:#00ff7f;
+}
+
+body.dark-mode .lab-actions{
+  border-top:1px solid rgba(255,255,255,0.08);
+}
+
+body.dark-mode .lab-card .btnn {
   background-color: #0f2e2b;
   color: #00ff7f;
-  border: 1px solid #00ff7f;
+  border-color: #00ff7f;
 }
 
-body.dark-mode .thm-btn:hover {
+body.dark-mode .lab-card .btnn:hover {
   background-color: #083d32;
   box-shadow: 0 4px 12px rgba(0, 255, 127, 0.25);
 }
 
-/* =========================
-   Responsive
-   ========================= */
-@media (max-width: 768px) {
-  #hands-on {
-    padding: 40px 15px;
-  }
-
-  #hands-on h2 {
-    font-size: 1.6rem;
-  }
-
-   .thm-embed {
-    padding: 0 25px;
-  }
-
-  .thm-embed iframe {
-    max-width: 100%;
-    height: auto;
-  }
+body.dark-mode .lab-card .btnn:focus {
+  outline: 2px solid #00ff7f;
 }
-
-
 
 
 /* =========================
