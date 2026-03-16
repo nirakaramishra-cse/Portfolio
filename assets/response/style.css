@@ -1082,205 +1082,166 @@ body.dark-mode .resume-button:focus {
 
 
 /* =========================
-  Skills Section
+   Skills Section
 ========================= */
+
 #skills {
-  background-color: #f7f9fc;
   padding: 60px 20px;
-  color: #000000;
-  scroll-margin-top: 80px;
+  background-color: #f7f9fc;
 }
 
 #skills h2 {
-  font-size: 2rem;
   text-align: center;
+  font-size: 2rem;
   margin-bottom: 40px;
   color: #222;
 }
 
 /* =========================
-   Skill Group
-   ========================= */
-.tskill {
-  max-width: 1150px;
-  margin: 0 auto 50px;
+   Skills Grid
+========================= */
+
+.skills-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 30px;
+
+  max-width: 1100px;
+  margin: 0 auto;
+
+  align-items: stretch;
 }
 
-.tskill h3 {
-  font-size: 1.5rem;
+
+/* =========================
+   Skill Card
+========================= */
+
+.skill-card {
+  background-color: #ffffff;
+  border-radius: 12px;
+
+  padding: 25px;
+
+  border-left: 4px solid #38b2ac;
+
+  box-shadow: 0 6px 15px rgba(0,0,0,0.08);
+
+  display: flex;
+  flex-direction: column;
+
+  transition: transform 0.25s ease,
+              box-shadow 0.25s ease;
+}
+
+.skill-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 22px rgba(0,0,0,0.12);
+}
+
+/* =========================
+   Skill Title
+========================= */
+
+.skill-card h3 {
+  font-size: 1.2rem;
   color: #38b2ac;
-  margin-bottom: 30px;
-  border-bottom: 2px solid #38b2ac;
-  text-align: center;
-  letter-spacing: 1px;
+  margin-bottom: 10px;
 }
 
-.tskill h4 {
-  font-size: 1.3rem;
-  color: #555;
-  margin: 30px 0 10px;
-  font-weight: bold;
-  text-decoration: underline;
+.skill-card h3::after {
+  content: "";
+  display: block;
+
+  width: 40px;
+  height: 2px;
+
+  margin-top: 6px;
+
+  background-color: #38b2ac;
 }
 
 /* =========================
    Skill List
-   ========================= */
-.tskill ul {
+========================= */
+
+.skill-card ul {
   list-style: none;
   padding: 0;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  gap: 15px;
-  max-width: 1150px;
-  margin: 0 auto 25px;
+  margin-top: 10px;
+
+  flex-grow: 1;
 }
 
-.tskill ul li {
+.skill-card ul li {
   position: relative;
-  padding: 10px 15px 10px 2.2rem;
-  background-color: #ffffff;
-  border-left: 4px solid #38b2ac;
-  border-radius: 6px;
-  font-size: 15px;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.06);
-  transition: background-color 0.2s ease, transform 0.2s ease;
+  padding-left: 18px;
+  margin-bottom: 8px;
+
+  color: #334155;
+  font-size: 0.95rem;
 }
 
-/* Hover Icon (Hidden by default) */
-.tskill ul li::before {
-  content: "💡";
+.skill-card ul li::before {
+  content: "✔";
   position: absolute;
-  left: 10px;
-  top: 50%;
-  transform: translateY(-50%) scale(0.8);
-  opacity: 0;
-  transition: opacity 0.2s ease, transform 0.2s ease;
-}
-
-.tskill ul li:hover {
-  background-color: #ecf5fc;
-  transform: translateX(2px);
-}
-
-.tskill ul li:hover::before {
-  opacity: 1;
-  transform: translateY(-50%) scale(1);
-}
-
-/* =========================
-   Verify Skills Button
-   ========================= */
-.verify-skills {
-  margin-top: 2rem;
-  text-align: center;
-}
-
-.matrix-btn {
-  display: inline-block;
-  padding: 0.7rem 1.6rem;
-  font-size: 1rem;
-  font-weight: 700;
-  letter-spacing: 1px;
-  text-decoration: none;
-
-  color: #065f46;
-  background: #ffffff;
-  border: 2px solid #38b2ac;
-  border-radius: 10px;
-
-  position: relative;
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
-}
-
-.matrix-btn:hover {
-  transform: scale(1.04);
-  box-shadow: 0 0 10px rgba(56, 178, 172, 0.35);
-}
-
-/* =========================
-   Dark Mode – Skills
-   ========================= */
-body.dark-mode #skills {
-  background-color: #0d1117;
-  color: #f0f6fc;
-}
-
-body.dark-mode #skills h2 {
-  color: #ffffff;
-}
-
-body.dark-mode .tskill h3 {
-  color: #00ff7f;
-  border-bottom-color: #00ff7f;
-}
-
-body.dark-mode .tskill h4 {
-  color: #bbbbbb;
-}
-
-body.dark-mode .tskill ul li {
-  background-color: #0f172a;
-  border-left-color: #00ff7f;
-}
-
-body.dark-mode .tskill ul li:hover {
-  background-color: rgba(0,255,127,0.08);
-}
-
-body.dark-mode .tskill ul li:hover::before {
-  filter: drop-shadow(0 0 6px rgba(0,255,127,0.8));
-}
-
-/* =========================
-   Dark Mode – Verify Button
-   ========================= */
-body.dark-mode .matrix-btn {
-  color: #00ff7f;
-  background: rgba(0, 20, 0, 0.85);
-  border-color: #00ff7f;
-}
-
-body.dark-mode .matrix-btn::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  border-radius: 10px;
-  opacity: 0;
-  transition: opacity 0.3s ease;
-}
-
-body.dark-mode .matrix-btn:hover::before {
-  opacity: 1;
-  animation: neonMove 3s linear infinite;
-}
-
-@keyframes neonMove {
-  from { transform: rotate(0deg); }
-  to   { transform: rotate(360deg); }
+  left: 0;
+  color: #38b2ac;
 }
 
 /* =========================
    Responsive
-   ========================= */
+========================= */
+
 @media (max-width: 768px) {
-  #skills {
-    padding: 40px 15px;
+
+  #skills h2 {
+    font-size: 1.7rem;
   }
 
-  .tskill h3 {
-    font-size: 1.3rem;
+  .skill-card {
+    padding: 22px;
   }
 
-  .tskill h4 {
-    font-size: 1.1rem;
-  }
+}
 
-  .matrix-btn {
-    padding: 0.5rem 1.4rem;
-    font-size: 0.9rem;
-    letter-spacing: 1px;
-  }
+/* =========================
+   Dark Mode
+========================= */
+
+body.dark-mode #skills {
+  background-color: #0d1117;
+}
+
+body.dark-mode #skills h2 {
+  color: #f0f6fc;
+}
+
+body.dark-mode .skill-card {
+  background-color: #161b22;
+  border-left-color: #00ff7f;
+
+  box-shadow: 0 6px 15px rgba(240,246,252,0.05);
+}
+
+body.dark-mode .skill-card:hover {
+  box-shadow: 0 10px 22px rgba(240,246,252,0.08);
+}
+
+body.dark-mode .skill-card h3 {
+  color: #00ff7f;
+}
+
+body.dark-mode .skill-card h3::after {
+  background-color: #00ff7f;
+}
+
+body.dark-mode .skill-card ul li {
+  color: #c9d1d9;
+}
+
+body.dark-mode .skill-card ul li::before {
+  color: #00ff7f;
 }
 
 
@@ -1446,6 +1407,7 @@ body.dark-mode .thm-btn:hover {
     height: auto;
   }
 }
+
 
 
 
