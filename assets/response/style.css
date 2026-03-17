@@ -945,7 +945,6 @@ body.dark-mode .hero-glow {
 .resume-button {
   display: inline-block;
   margin-top: 20px;
-  margin-left: 35%;
   min-height: 44px;
   padding: 10px 20px;
   font-size: 0.95rem;
@@ -1665,6 +1664,10 @@ body.dark-mode .lab-card .btnn:focus {
 
 .project-links {
   text-align: right;
+  margin-top:auto;
+
+  padding-top:14px;
+  border-top:1px solid rgba(0,0,0,0.06);
 }
 
 
@@ -1675,6 +1678,7 @@ body.dark-mode .lab-card .btnn:focus {
   display: inline-block;
   padding: 8px 14px;
   font-size: 0.95rem;
+  margin-top: 10px;
 
   background-color: #e6fffa;
   color: #065f46;
@@ -1757,6 +1761,10 @@ body.dark-mode .project-card .btnn:hover {
 
 body.dark-mode .project-card .btnn:focus {
   outline: 2px solid #00ff7f;
+}
+
+body.dark-mode .project-links {
+  border-top:1px solid rgba(255,255,255,0.08);
 }
 
 /* =========================
@@ -2829,6 +2837,10 @@ body.dark-mode .testimonial-card:hover {
 ========================= */
 body.dark-mode #contact {
   background-color: #0d1117;
+  color: #f0f6fc;
+}
+
+body.dark-mode #contact h2 {
   color: #f0f6fc;
 }
 
