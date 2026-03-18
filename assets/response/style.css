@@ -1558,6 +1558,7 @@ body.dark-mode .lab-card .btnn:focus {
 .project-card {
   position: relative;
   overflow: hidden;
+  cursor: pointer;
 
   background-color: #ffffff;
   border-radius: 12px;
@@ -1723,7 +1724,6 @@ body.dark-mode .project-card {
   border: 1px solid #30363d;
   border-left: 4px solid #00ff7f;
 
-  box-shadow: 0 6px 15px rgba(0, 255, 127, 0.08);
   box-shadow: 0 6px 15px rgba(240, 246, 252, 0.05);
 }
 
@@ -1739,10 +1739,6 @@ body.dark-mode .project-description,
 body.dark-mode .project-tools,
 body.dark-mode .project-keypoints li {
   color: #cccccc;
-}
-
-body.dark-mode .project-keypoints p {
-  color: #ffffff;
 }
 
 body.dark-mode .project-keypoints li::before {
@@ -1799,6 +1795,66 @@ body.dark-mode .project-links {
   }
 
 }
+
+
+/* =========================
+   Project Subtitle (Key Features)
+========================= */
+
+.project-subtitle {
+  font-size: 0.95rem;
+  margin-top: 10px;
+  margin-bottom: 6px;
+  color: #2c7a7b; /* teal tone */
+  font-weight: 600;
+}
+
+/* =========================
+   Project Impact Section
+========================= */
+
+.project-impact {
+  margin-top: 10px;
+  padding: 10px 12px;
+
+  font-size: 0.9rem;
+  line-height: 1.5;
+
+  background-color: #e6fffa;
+  border-left: 4px solid #38b2ac;
+  border-radius: 6px;
+
+  color: #065f46;
+}
+
+.project-impact strong {
+  color: #065f46;
+}
+
+
+/* =========================
+   Dark Mode - Subtitle
+========================= */
+
+body.dark-mode .project-subtitle {
+  color: #00ff7f;
+}
+
+
+/* =========================
+   Dark Mode - Impact
+========================= */
+
+body.dark-mode .project-impact {
+  background-color: #0f2e2b;
+  border-left: 4px solid #00ff7f;
+  color: #c9f7e5;
+}
+
+body.dark-mode .project-impact strong {
+  color: #00ff7f;
+}
+
 
 
 /* =========================
@@ -2340,14 +2396,14 @@ body.dark-mode .cert-card .btnn:hover {
 /* =========================
    Services Section
    ========================= */
-#services {
+#capabilities {
   background-color: #f7f9fc;
   color: #000000;
   padding: 60px 20px;
   text-align: center;
 }
 
-#services h2 {
+#capabilities h2 {
   font-size: 2.2rem;
   margin-bottom: 40px;
   color: #222;
@@ -2398,12 +2454,12 @@ body.dark-mode .cert-card .btnn:hover {
 /* =========================
    Dark Mode – Services
    ========================= */
-body.dark-mode #services {
+body.dark-mode #capabilities {
   background-color: #0d1117;
   color: #f0f6fc;
 }
 
-body.dark-mode #services h2 {
+body.dark-mode #capabilities h2 {
   color: #f0f6fc;
 }
 
