@@ -115,8 +115,8 @@ document.addEventListener("DOMContentLoaded", () => {
 ========================= */
 const textArray = [
   "Hello, I’m Nirakara Mishra 👋",
-  "Aspiring Cybersecurity Analyst",
-  "SOC & Threat Detection Enthusiast",
+  "Cybersecurity Analyst",
+  "SOC & Threat Detection",
 ];
 
 let typingIndex = 0;
