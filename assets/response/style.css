@@ -2206,7 +2206,7 @@ body.dark-mode .edu-subjects li:hover{
 }
 
 .cert-card:hover .cert-badge {
-  transform: scale(1.05);
+  transform: scale(1.06);
 }
 
 .cert-badge-link {
@@ -2214,7 +2214,7 @@ body.dark-mode .edu-subjects li:hover{
 }
 
 .cert-badge-link:hover .cert-badge {
-  transform: scale(1.08);
+  transform: scale(1.09);
 }
 
 
@@ -2389,6 +2389,10 @@ body.dark-mode .cert-card .btnn {
 body.dark-mode .cert-card .btnn:hover {
   background-color: #083d32;
   box-shadow: 0 4px 12px rgba(0, 255, 127, 0.25);
+}
+
+body.dark-mode .cert-card .btnn:focus {
+  outline: 2px solid #00ff7f;
 }
 
 
